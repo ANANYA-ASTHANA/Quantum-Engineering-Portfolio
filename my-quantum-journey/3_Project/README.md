@@ -51,7 +51,7 @@ The system consists of four integrated layers:
 
 Across all layers, the architecture is designed for **high assurance**, **access control**, and **operational robustness**, reflecting the stringent requirements of **mission-critical government–military networks**.
 
-For a complete methodological explanation, refer to: [**`docs/project_summary.md**`](docs/project_summary.md)
+For a complete methodological explanation, refer to: [`docs/project_summary.md`](docs/project_summary.md)
 
 ---
 
