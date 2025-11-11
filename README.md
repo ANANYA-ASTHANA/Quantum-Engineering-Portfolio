@@ -61,11 +61,7 @@ Follow these steps to set up the repository and run notebooks locally:
 
     git clone https://github.com/ANANYA-ASTHANA/Quantum-Engineering-Portfolio.git
 
-### 2. Navigate into the repo folder
-
-    cd my-quantum-journey
-
-### 3. Install dependencies
+### 2. Install dependencies
 
     pip install -r requirements.txt
 
@@ -81,12 +77,9 @@ Follow these steps to set up the repository and run notebooks locally:
 To recreate the same environment used in this project:
 
 #### 1. Create the environment from the provided YAML file
-    conda env create -f environment.yml
+    conda env create -f environment.yaml
 
-#### 2. Activate the environment
-    conda activate qiskit-env
-
-#### 3. Launch Jupyter Lab inside the repo folder
+#### 2. Launch Jupyter Lab inside the repo folder
     jupyter lab
 
 ---
@@ -97,4 +90,3 @@ The summary consolidates theoretical, computational, and engineering aspects of 
 
 [Research Summary (PDF)](./Research_Summary_EPFL_v3.pdf)
 
----
