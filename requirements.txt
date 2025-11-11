@@ -4,3 +4,7 @@ qiskit-aer>=0.14,<0.16
 qiskit-algorithms>=0.3,<0.5
 matplotlib>=3.7,<3.10
 pylatexenc>=2.10,<3.0
+jupyterlab>=3.6,<5.0
+notebook>=6.5,<7.0
+ipykernel>=6.0,<7.0
+

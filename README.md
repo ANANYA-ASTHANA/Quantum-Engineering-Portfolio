@@ -59,28 +59,77 @@ Follow these steps to set up the repository and run notebooks locally:
 
 ### 1. Clone the repository
 
+    ```bash
     git clone https://github.com/ANANYA-ASTHANA/Quantum-Engineering-Portfolio.git
+    ```
 
-### 2. Install dependencies
+### 2. Navigate into the repo folder
 
+    ```bash
+    cd Quantum-Engineering-Portfolio
+    ```
+
+### 3. Option A — Reproduce using pip (recommended for lightweight usage)
+#### 3.1 Create and activate a virtual environment
+
+    ```bash
+    python -m venv .venv
+    # macOS/Linux:
+    source .venv/bin/activate
+    # Windows (PowerShell):
+    # .venv\Scripts\Activate.ps1
+    ```
+
+#### 3.2 Install dependencies
+
+    ```bash 
     pip install -r requirements.txt
+    ```
 
-### 4. Launch Jupyter Lab or Notebook
-#### Launch Jupyter Lab
-    jupyter lab
+#### 3.3 Register the environment as a Jupyter kernel (recommended)
 
-#### OR launch Jupyter Notebook
-    jupyter notebook
+    ```bash
+    python -m ipykernel install --user --name qe-portfolio
+    ```
 
-### 5. Reproducing the Environment (optional)
+#### 3.4 Launch Jupyter from the repository root
+
+    ```bash
+    jupyter lab    # or: jupyter notebook
+    ```
+
+### 4. Option B — Reproduce using Conda (full environment recreation)
 
 To recreate the same environment used in this project:
 
-#### 1. Create the environment from the provided YAML file
-    conda env create -f environment.yaml
+#### 4.1. Create the environment from the provided YAML file
 
-#### 2. Launch Jupyter Lab inside the repo folder
-    jupyter lab
+    ```bash
+    conda env create -f environment.yaml
+    ```
+
+#### 4.2. Activate the environment
+
+    ```bash
+    conda activate foundations-simulations-env
+    ```
+
+#### 4.3 (Optional) Register the environment as a Jupyter kernel
+
+    ```bash 
+    python -m ipykernel install --user --name foundations-simulations-env
+    ```
+
+#### 4.4. Launch Jupyter from the repository root
+
+    ```bash
+    jupyter lab    # or: jupyter notebook
+    ```
+
+**Notes:** 
+- JupyterLab, notebook, and ipykernel are already included in `requirements.txt` and `environment.yaml`, so no additional installation is required.
+- VS Code users may open .ipynb files directly; the environments created above will appear in the Jupyter kernel selector.
+- The `Project/` folder has its own reproducibility files for the quantum-classical integrated system.
 
 ---
 
