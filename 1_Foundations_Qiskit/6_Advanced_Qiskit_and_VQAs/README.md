@@ -7,7 +7,6 @@ This submodule contains focused notebooks for the topic **6 Advanced Qiskit and 
 ## Contents
 
 - M6_Key_Concepts.ipynb
-- README.md
 - mini_experiments/
 
 ---

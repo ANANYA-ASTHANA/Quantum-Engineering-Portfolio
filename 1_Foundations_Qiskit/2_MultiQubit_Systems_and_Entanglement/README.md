@@ -7,7 +7,6 @@ This submodule contains focused notebooks for the topic **2 MultiQubit Systems a
 ## Contents
 
 - M2_Key_Concepts.ipynb
-- README.md
 - mini_experiments/
 
 ---

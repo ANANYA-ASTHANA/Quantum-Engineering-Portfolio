@@ -7,7 +7,6 @@ This submodule contains focused notebooks for the topic **5 Measurement and Nois
 ## Contents
 
 - M5_Key_Concepts.ipynb
-- README.md
 - mini_experiments/
 
 ---

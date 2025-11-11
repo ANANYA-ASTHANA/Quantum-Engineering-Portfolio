@@ -7,7 +7,6 @@ This submodule contains focused notebooks for the topic **1 Quantum Basics and S
 ## Contents
 
 - M1_Key_Concepts.ipynb
-- README.md
 - mini_experiments/
 
 ---

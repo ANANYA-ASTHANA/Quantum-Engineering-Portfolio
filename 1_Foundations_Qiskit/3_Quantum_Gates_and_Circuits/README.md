@@ -7,7 +7,6 @@ This submodule contains focused notebooks for the topic **3 Quantum Gates and Ci
 ## Contents
 
 - M3_Key_Concepts.ipynb
-- README.md
 - mini_experiments/
 
 ---

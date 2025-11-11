@@ -7,7 +7,6 @@ This submodule contains focused notebooks for the topic **4 Quantum Algorithms F
 ## Contents
 
 - M4_Key_Concepts.ipynb
-- README.md
 - mini_experiments/
 
 ---
