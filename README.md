@@ -33,7 +33,6 @@ Applied system bridging quantum and classical cryptography, with the following p
 - Integrate distilled quantum keys into an AES-256 encryption pipeline to secure hierarchical classical subnets, illustrating a practical hybrid quantum–classical security stack.
 - Demonstrate an end-to-end workflow from quantum key generation and QBER-based key acceptance to encrypted classical communication in a structured multi-layer network setting.
 
-
 ### 4. Research_Analyses/  
 Analytical reviews addressing frontier topics in quantum information science:  
 - Quantum Neural Networks (QNNs) for encoding and optimization  

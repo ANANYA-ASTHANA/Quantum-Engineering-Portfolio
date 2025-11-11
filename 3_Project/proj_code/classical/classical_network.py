@@ -284,7 +284,7 @@ class MilitaryNetwork:
         qkd_key = "secure_qkd_key"  # Placeholder for QKD-generated key
         expected_response = hmac.new(qkd_key.encode(), node_id.encode(), hashlib.sha256).hexdigest()
         print(expected_response)
-        if "expected_response" != qkd_challenge:
+        if "expected_response" != qkd_challenge:  # "expected_response" used as placeholder qkd_challenge for demo purpose
             return "QKD authentication failed - Access Denied"
         
         self.authenticated_nodes[node_id] = resolved_layer
