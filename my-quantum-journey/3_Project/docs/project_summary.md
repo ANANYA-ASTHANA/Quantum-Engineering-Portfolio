@@ -34,8 +34,8 @@ The system is divided into four tightly integrated layers:
 
 Implements multi-protocol QKD:
 
-- **E91** for high-security Cabinet ↔ HQ links [3]
-- **TF-QKD** for long-range HQ ↔ Regional Base Station links [4] 
+- **E91** for high-security Cabinet $\leftrightarrow$ HQ links [3]
+- **TF-QKD** for long-range HQ $\leftrightarrow$ Regional Base Station links [4] 
 - **MDI-QKD** for hardware-attack-resistant inter-base communication [5] 
 
 The quantum layer handles raw-key generation, sifting, QBER estimation, and secure transfer of sifted keys to the classical layer via ZeroMQ.
@@ -48,7 +48,7 @@ Implemented using NS-3 with:
 
 - THz/mmWave-like channel characteristics  
 - Hierarchical subnets reflecting military layers  
-- SDN-driven adaptive modulation (BPSK → 1024-QAM based on SNR)  
+- SDN-driven adaptive modulation (BPSK $\rightarrow$ 1024-QAM based on SNR)  
 - Real-time channel metrics (SNR, BER, Load, Packet Loss)  
 - Anomaly detection (threshold-based behavioral deviations)  
 
@@ -66,7 +66,7 @@ The bridge manages:
 - AES session-key derivation via Trevisan's extractor (double usage)/HKDF-SHA256 (efficient KDF alternative to Trevisan) [8]
 - Secure (session) key propagation to backend communication layers  
 
-Together, this creates an end-to-end secure pipeline from quantum measurement → key derivation → encrypted classical transmission.
+Together, this creates an end-to-end secure pipeline from quantum measurement $\rightarrow$ key derivation $\rightarrow$ encrypted classical transmission.
 
 ---
 
@@ -138,7 +138,7 @@ Modeling ensures that the architecture reflects realistic 6G deployment constrai
 - Entangled pair measurement  
 - Basis reconciliation  
 - 10% sample for QBER estimation  
-- QBER ≤ 5% → key accepted (with sample bits removed), else entire key discarded  
+- QBER ≤ 5% $\rightarrow$ key accepted (with sample bits removed), else entire key discarded  
 
 #### **TF-QKD (Qiskit)**
 
@@ -157,7 +157,7 @@ Modeling ensures that the architecture reflects realistic 6G deployment constrai
 ### **5.2 Quantum-to-Classical Key Transfer**
 
 - ZeroMQ REQ–REP  
-- Raw key → Classical post-processing  
+- Raw key $\rightarrow$ Classical post-processing  
 - Secure ACK (Acknowledgement) exchanges  
 
 ---
