@@ -24,6 +24,7 @@ Canonical and exploratory circuit models, including:
 - Grover’s search
 - Quantum Fourier Transform (QFT)
 - Variational Quantum Eigensolver (VQE) 
+
 Each notebook links theoretical constructs with experimental outcomes through visualization and measurement analysis.
 
 ### 3. Project/  
@@ -38,6 +39,7 @@ Analytical reviews addressing frontier topics in quantum information science:
 - Quantum Neural Networks (QNNs) for encoding and optimization  
 - Neglecton-based braiding mechanisms for fault-tolerant computation  
 - Hybrid PQC–Quantum architectures for scalable long-term security  
+
 Each entry synthesizes literature insights, identifies open challenges, and outlines pathways for implementation.
 
 ---
@@ -57,11 +59,11 @@ Follow these steps to set up the repository and run notebooks locally:
 
 ### 1. Clone the repository
 
-    git clone https://github.com/ANANYA-ASTHANA/my-qiskit-journey.git
+    git clone https://github.com/ANANYA-ASTHANA/Quantum-Engineering-Portfolio.git
 
 ### 2. Navigate into the repo folder
 
-    cd my-qiskit-journey
+    cd my-quantum-journey
 
 ### 3. Install dependencies
 
