@@ -1,0 +1,9 @@
+# Normalize line endings
+* text=auto eol=lf
+
+# Shell scripts
+*.sh text eol=lf
+*.bat text eol=crlf
+
+# Treat notebooks as binary to avoid noisy diffs
+*.ipynb binary

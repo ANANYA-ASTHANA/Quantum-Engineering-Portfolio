@@ -1,0 +1,24 @@
+name: proj-repro-env
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.10,<3.11
+  - numpy>=1.24,<2.2
+  - networkx>=2.8,<3.4
+  - pip
+  - pip:
+      - Flask>=2.3,<3.0
+      - SimulaQron
+      - cryptography>=41.0,<43.0
+      - cryptomite
+      - eventlet>=0.33,<0.36
+      - flask-socketio>=5.3,<6.0
+      - pyldpc>=0.9,<1.1
+      - pyotp>=2.8,<2.9
+      - pyvis>=0.3,<0.4
+      - pyzmq>=24.0,<26.0
+      - qiskit>=1.0,<3.0
+    
+# System dependencies (install separately):
+# - ns-3 with Python bindings (module 'ns')
+# - SimulaQron runtime (for CQC network)

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Secure Chatroom</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+</head>
+<body>
+    <h2>Chatroom: Node {{ sender_node_id }}</h2>
+
+    <div>
+        <label>Recipient Node ID:</label>
+        <input type="text" id="recipient_node_id"><br><br>
+
+        <textarea id="message" placeholder="Enter message here"></textarea><br>
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <hr>
+    <div id="chat_log"></div>
+
+    <script>
+        const socket = io();
+        const senderNodeId = "{{ sender_node_id }}";
+
+        function sendMessage() {
+            const recipient = document.getElementById("recipient_node_id").value;
+            const msg = document.getElementById("message").value;
+
+            socket.emit("send_message", {
+                recipient_node_id: recipient,
+                message: msg
+            });
+
+            logMessage(`You (to ${recipient}): ${msg}`);
+        }
+
+        socket.on("receive_message", (data) => {
+            const from = data.sender;
+            const msg = data.message;  // Will be decrypted server-side
+            //logMessage(`Encrypted message from ${from}: ${JSON.stringify(msg)}`);
+            // Optional: Display encrypted parts for debugging
+            console.log("Received from:", from);
+            console.log("Encrypted:", msg);
+
+            // Optionally request decryption by sending back to server
+            socket.emit('decrypt_request', { msg, from });
+        });
+
+        socket.on("message_received", (data) => {
+            logMessage("✅ Message delivered and decrypted on recipient's end.");
+            socket.emit('key_manage', {
+            'confirmation': 'Message received and decrypted'
+        });
+        });
+
+        socket.on("decrypted_message", (data) => {
+            const sender = data.from;
+            const decryptedMsg = data.decrypted;
+            logMessage(`📥 Message from ${sender}: ${decryptedMsg}`);
+        });
+
+        socket.on("error", (data) => {
+            alert("Error: " + data.message);
+        });
+
+        function logMessage(msg) {
+            const log = document.getElementById("chat_log");
+            const entry = document.createElement("div");
+            entry.innerText = msg;
+            log.appendChild(entry);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+name: foundations-simulations-env
+channels:
+- conda-forge
+dependencies:
+- python>=3.10,<3.11
+- numpy>=1.24,<2.2
+- matplotlib>=3.7,<3.10
+- pip
+- pip:
+  - qiskit>=1.0,<3.0
+  - qiskit-aer>=0.14,<0.16
+  - qiskit-algorithms>=0.3,<0.5
+  - pylatexenc>=2.10,<3.0

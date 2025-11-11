@@ -1,0 +1,34 @@
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.venv/
+env/
+venv/
+.build/
+dist/
+.eggs/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+
+# IDE / Editors
+.vscode/
+.idea/
+
+# Logs / misc
+*.log
+*.tmp
+
+# Environment / reproducibility
+*.env
+*.yaml.lock
+requirements.lock.txt
+
+# Archives
+*.zip

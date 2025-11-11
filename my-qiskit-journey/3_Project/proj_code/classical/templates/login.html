@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Military Network Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h2>Login</h2>
+    <form id="loginForm">
+        <label>Node ID:</label><br>
+        <input type="text" id="node_id" required><br>
+
+        <label>MFA Code:</label><br>
+        <input type="text" id="mfa_code" required><br>
+
+        <label>QKD Challenge:</label><br>
+        <input type="text" id="qkd_challenge" required><br><br>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <script>
+        document.getElementById("loginForm").onsubmit = async (e) => {
+            e.preventDefault();
+            const response = await fetch("/login", {
+                method: "POST",
+                credentials: "include",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    node_id: document.getElementById("node_id").value,
+                    mfa_code: document.getElementById("mfa_code").value,
+                    qkd_challenge: document.getElementById("qkd_challenge").value
+                })
+            });
+
+            const data = await response.json();
+            console.log("Server response:", data);
+            alert(data.message);
+
+            if (data.status === "success") {
+                window.location.href = data.redirect;
+            }
+        };
+    </script>
+</body>
+</html>
