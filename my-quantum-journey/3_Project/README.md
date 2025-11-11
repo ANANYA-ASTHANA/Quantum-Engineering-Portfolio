@@ -58,7 +58,7 @@ For a complete methodological explanation, refer to: [`docs/project_summary.md`]
 ## 3. Key Experimental Results
 
 - Successful **E91-based key generation**, with accurate entanglement sharing, sifting, and **QBER testing using 10% publicly revealed bits**:  
-  - The key was accepted only when QBER ≤ **5%**, after which testing bits were discarded  
+  - The key was accepted only when QBER $\le$ **5%**, after which testing bits were discarded  
   - If QBER exceeded the threshold, the entire raw key was rejected  
 - Correct simulation of **TF-QKD central-node interference** via a Hamiltonian beamsplitter
 - Correct simulation of **MDI-QKD Bell-State Measurements (BSM)** at an untrusted Charlie  
