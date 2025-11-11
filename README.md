@@ -1,6 +1,6 @@
 # Quantum Systems and Engineering Portfolio  
 **Ananya Asthana**  
-*MSc in Quantum Science and Engineering*  
+*MSc. Quantum Science and Engineering*  
 
 ---
 
@@ -106,6 +106,7 @@ To recreate the same environment used in this project:
 
     jupyter lab    # or: jupyter notebook
     
+
 
 **Notes:** 
 - JupyterLab, notebook, and ipykernel are already included in `requirements.txt` and `environment.yaml`, so no additional installation is required.
