@@ -107,8 +107,7 @@ To recreate the same environment used in this project:
     jupyter lab    # or: jupyter notebook
     
 
-
-**Notes:** 
+> **Notes:** 
 - JupyterLab, notebook, and ipykernel are already included in `requirements.txt` and `environment.yaml`, so no additional installation is required.
 - VS Code users may open .ipynb files directly; the environments created above will appear in the Jupyter kernel selector.
 - The `Project/` folder has its own reproducibility files for the quantum-classical integrated system.
