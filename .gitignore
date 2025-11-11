@@ -1,34 +1,46 @@
-# Python artifacts
+# Byte-compiled / caches
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
+*.so
 *.pyd
-*.egg-info/
-.venv/
-env/
-venv/
-.build/
-dist/
-.eggs/
 
 # Jupyter
 .ipynb_checkpoints/
+*.nbconvert.ipynb
 
-# OS files
+# Environments
+.env
+.venv/
+venv/
+env/
+*.conda
+conda-meta/
+pip-wheel-metadata/
+
+# OS / editor
 .DS_Store
-
-# IDE / Editors
+Thumbs.db
 .vscode/
 .idea/
 
-# Logs / misc
+# Builds / artifacts
+build/
+dist/
+*.egg-info/
 *.log
-*.tmp
 
-# Environment / reproducibility
-*.env
-*.yaml.lock
-requirements.lock.txt
+# Data junk
+*.sqlite*
+*.db
+*.parquet
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.npz
+*.npy
 
-# Archives
-*.zip
+# Graphviz/plots caches
+*.gv.pdf
+*.gv.png
+*.dot
