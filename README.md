@@ -111,11 +111,4 @@ To recreate the same environment used in this project:
 - VS Code users may open .ipynb files directly; the environments created above will appear in the Jupyter kernel selector.
 - The `Project/` folder has its own reproducibility files for the quantum-classical integrated system.
 
----
-
-## Reference Document  
-A comprehensive overview of the research objectives, methodologies, and outcomes underlying this portfolio is provided in the accompanying document below.  
-The summary consolidates theoretical, computational, and engineering aspects of the work presented in this repository.
-
-[Research Summary (PDF)](./Research_Summary_EPFL_v3.pdf)
 
