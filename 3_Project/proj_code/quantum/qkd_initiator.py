@@ -62,13 +62,13 @@ def determine_qkd_protocol(username):
     return protocol
 
 def tf_qkd(my_node, target_node):
-    """Implements the Twin-Field QKD (TF-QKD) protocol."""
+    """Placeholder simulation of the Twin-Field QKD (TF-QKD) protocol."""
     print(f"\n🔄 Establishing TF-QKD between {my_node} and {target_node}...")
     print("📡 Sending weak coherent pulses through an untrusted relay...")
     print(f"✅ Secure key established between {my_node} and {target_node} via TF-QKD.")
 
 def mdi_qkd(my_node, target_node):
-    """Implements the Measurement-Device-Independent QKD (MDI-QKD) protocol."""
+    """Placeholder simulation of the Measurement-Device-Independent QKD (MDI-QKD) protocol."""
     print(f"\n🔄 Establishing MDI-QKD between {my_node} and {target_node}...")
     print("📡 Alice and Bob send qubits to an untrusted relay for Bell-state measurement...")
     print(f"✅ Secure key established between {my_node} and {target_node} via MDI-QKD.")
