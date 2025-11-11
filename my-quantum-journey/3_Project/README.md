@@ -41,7 +41,7 @@ The system consists of four integrated layers:
 
 ### **Classical Network Layer**
 - **NS-3 (≥3.43)** simulation of a 6G environment using mmWave/THz models  
-- **SDN-driven adaptive modulation** (PSK ↔ QAM based on real-time SNR)  
+- **SDN-driven adaptive modulation** (PSK $\leftrightarrow$ QAM based on real-time SNR)  
 - AES-256–encrypted communication using quantum-derived keys  
 
 ### **User Interface Layer**
@@ -62,7 +62,7 @@ For a complete methodological explanation, refer to: [`docs/project_summary.md`]
   - If QBER exceeded the threshold, the entire raw key was rejected  
 - Correct simulation of **TF-QKD central-node interference** via a Hamiltonian beamsplitter
 - Correct simulation of **MDI-QKD Bell-State Measurements (BSM)** at an untrusted Charlie  
-- Strong entropy final keys produced via the LDPC → Trevisan → HKDF pipeline  
+- Strong entropy final keys produced via the LDPC $\rightarrow$ Trevisan $\rightarrow$ HKDF pipeline  
 - AES-256 communication remained robust across fluctuating channel conditions  
 - SDN-driven adaptive modulation behaved correctly under real-time SNR changes  
 - Real-time visualization provided operational insight for monitoring node behavior
