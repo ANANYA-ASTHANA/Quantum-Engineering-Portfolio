@@ -64,18 +64,10 @@ These directions are crucial for real-world viability and efficiency of future-p
 
 ## References
 [1] P. W. Shor, "Algorithms for quantum computation: Discrete logarithms and factoring," in Proc. 35th Annu. Symp. Foundations Comput. Sci., 1994, pp. 124–134.
-  
 [2] N. Gisin et al., "Quantum cryptography," Rev. Mod. Phys., vol. 74, no. 1, pp. 145–195, Mar. 2002.
-
 [3] D. J. Bernstein, "Post-quantum cryptography," Nature, vol. 549, no. 7671, pp. 188–194, Sept. 2017.
-
 [4] A. K. Ekert, “Quantum cryptography based on Bell’s theorem,” Phys. Rev. Lett., vol. 67, no. 6, pp. 661–663, Aug. 1991, doi: 10.1103/PhysRevLett.67.661.
-
 [5] M. Lucamarini et al., “Overcoming the rate–distance limit of quantum key distribution without quantum repeaters,” Nature, vol. 557, no. 7705, pp. 400–403, May 2018, doi: 10.1038/s41586-018-0066-6.
-
 [6] H.-K. Lo, M. Curty, and B. Qi, "Measurement-device-independent quantum key distribution," Phys. Rev. Lett., vol. 108, no. 13, p. 130503, Mar. 2012. 
-
 [7] L. K. Grover, “A fast quantum mechanical algorithm for database search,” Proceedings of the twenty-eighth annual ACM symposium on Theory of computing - STOC ’96, 1996, doi: https://doi.org/10.1145/237814.237866.
-
 [8] M. Herrero-Collantes and J. C. Garcia-Escartin, “Quantum random number generators,” *Rev. Mod. Phys.*, vol. 89, no. 1, p. 015004, Jan. 2017.
-
