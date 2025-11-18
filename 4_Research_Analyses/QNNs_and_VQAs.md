@@ -1,31 +1,110 @@
 # Quantum Neural Networks (QNNs) & Variational Quantum Algorithms (VQAs)
 
 ## Research Context
-This note surveys foundational ideas behind QNN architectures and VQAs, focusing on expressivity, trainability, barren plateaus, and their role in near-term quantum machine-learning workflows. The emphasis is on conceptual clarity rather than experimental implementation.
+Quantum neural networks (QNNs) and variational quantum algorithms (VQAs) sit at the intersection of quantum computing and machine learning, aiming to exploit superposition, entanglement, and quantum parallelism to represent and process information in ways that go beyond classical neural networks.
+
+QNNs can be viewed along two complementary axes:
+
+- **Hardware-oriented QNNs:** parameterized quantum circuits (variational quantum circuits, VQCs) trained via classical optimizers to solve supervised, unsupervised, or generative tasks, often in a hybrid quantum–classical workflow [2],[3].
+
+- **Quantum-inspired / cognitive QNNs:** models that embed quantum principles (superposition, interference, contextuality) into classical or neuromorphic architectures, including recent “quantum-cognitive” constructions that run entirely on standard hardware yet emulate quantum-like cognitive behaviour [1].
+
+VQAs form the algorithmic backbone for many QNNs. They define a cost function, encode data into a quantum state, apply a parameterized ansatz (VQC), and iteratively update parameters using classical optimization [3]. This paradigm underlies applications in chemistry (VQE), combinatorial optimization (QAOA), and general learning tasks.
+
+From a broader quantum machine-learning (QML) perspective, QNNs and VQAs are among the most widely studied quantum learning models in recent literature reviews, with applications in classification, regression, generative modelling, quantum chemistry, finance, and physics-inspired tasks [6].
 
 ## Key Insights
-- QNNs are parameterized quantum circuits trained analogously to neural networks but operate within a unitary, differentiable quantum framework.
-- VQAs minimize a cost function using classical optimization while sampling expectation values on a quantum device.
-- Expressivity of ansätze determines the reachable function class but also affects the likelihood of barren plateaus.
-- Noise, finite sampling, and circuit depth strongly impact performance.
+### QNNs as parameterized quantum models
+QNNs are typically realized as parameterized quantum circuits (VQCs) in which data are embedded into quantum states, transformed by trainable unitary operations, and measured to yield classical outputs. These architectures can be fully quantum or hybrid quantum–classical, where a small quantum core is embedded in a larger classical pipeline.
+
+### VQAs as a unifying training paradigm
+VQAs minimize a cost function by iteratively sampling expectation values on a quantum device (or simulator) and updating parameters with a classical optimizer. Many QNN training schemes—including variational classifiers, quantum circuit learning, and continuous-variable QNNs—fit naturally into this VQA framework.
+
+### Expressivity vs. trainability trade-off
+Highly expressive ansätze (deep, strongly entangling circuits) can represent complex functions and quantum states but are prone to barren plateaus—regions where gradients vanish exponentially with system size, making training intractable. In contrast, shallow or strongly constrained circuits are easier to train but may underfit the target function or state.
+
+### Entanglement-induced barren plateaus
+Excess entanglement between visible and hidden degrees of freedom in deep QNNs can destroy predictive power: when hidden units are traced out, the visible state tends toward the maximally mixed state, effectively “washing out” information and driving gradients to zero. This provides a concrete mechanism by which naive deep QNN designs fail to scale [5].
+
+### Task-dependent performance of QNNs (regression evidence)
+Controlled comparisons between classical neural networks and continuous-variable QNNs on regression tasks show that QNNs can achieve orders-of-magnitude lower error on structured, oscillatory targets (e.g., sinusoidal functions) but do not offer universal gains—performance may degrade or match classical models on discontinuous or less “quantum-friendly” targets [4].
+
+### QNNs within the broader QML landscape
+Systematic literature reviews confirm that QNNs and VQAs are central to QML, but most current studies are proof-of-concept on small-scale datasets and noisy intermediate-scale quantum (NISQ) devices or simulators. Demonstrated advantages are often problem-specific and rely on careful design of data encoding, ansatz structure, and hybrid workflows.
+
+### Quantum-cognitive and neuromorphic perspectives
+Quantum-cognitive models map classical neural architectures (FNNs, RNNs, Echo State Networks, Bayesian NNs) into quantum-inspired analogues that encode cognitive concepts such as superposed beliefs, contextuality, and probabilistic reasoning—often implementable on a classical laptop. This line of work connects QNNs with neuromorphic computing and quantum cognition theory and suggests alternative, hardware-agnostic paths to “quantum-like” intelligence [1].
 
 ## Analytical Commentary
-QNNs and VQAs exhibit a trade-off between expressive power and trainability. Highly expressive circuits often suffer from vanishing gradients (barren plateaus), while too-restricted circuits fail to approximate the desired target functions.
+QNNs and VQAs can be interpreted as *trainable quantum feature maps*. Classical data are encoded into quantum states—through basis, amplitude, or continuous-variable encodings—then transformed by a parameterized sequence of gates. The resulting state defines a learned representation; measurement maps it back to classical outputs.
 
-Additional observations:
-- Local cost functions mitigate gradient collapse but do not eliminate it.
-- Initialization strategies can heavily influence convergence.
-- Hardware-efficient ansätze are practical but introduce optimization noise and reduced controllability over expressivity.
-- Despite limitations, VQAs remain among the most feasible near-term quantum machine-learning strategies due to their hybrid model and resource efficiency.
+From the *architectural* standpoint, the QNN literature distinguishes between:
+
+- **Circuit-based QNNs / VQCs:** gate-model circuits with layers of single-qubit rotations and entangling gates (e.g., CNOT, CZ, SWAP) arranged in hardware-efficient or problem-inspired patterns. These realize quantum analogues of fully connected or convolutional networks (QCNNs, quantum kernels, quantum circuit learning).
+
+- **Continuous-variable (CV) QNNs:** models using bosonic modes and Gaussian/non-Gaussian operations as “neurons” and “activations”, naturally encoding real-valued amplitudes and introducing nonlinear effects within the quantum circuit. This is particularly attractive for regression tasks and function approximation [4].
+
+- **Quantum-cognitive / neuromorphic QNNs:** architectures that start from classical FNNs, RNNs, ESNs, or Bayesian NNs and replace or augment specific components (activations, reservoirs, priors) with quantum-inspired mechanisms (e.g., tunnelling-based activations, superposed cognitive states) to emulate human-like reasoning and memory [1].
+
+Within this ecosystem, **VQAs provide a training recipe** rather than a specific architecture. The cost function can represent:
+
+- an energy expectation value (VQE, chemistry),
+
+- a label-based loss for classification/regression,
+
+- a divergence between generated and target quantum states in generative settings.
+
+However, **trainability is a central bottleneck**. Barren plateau results show that, under generic assumptions (randomized deep ansätze, global cost functions), gradients vanish exponentially in system size, making gradient-based training impractical. Entanglement-induced barren plateaus refine this picture by tying vanishing gradients to over-entanglement between visible and hidden subsystems: information is stored non-locally in correlations, so tracing out hidden units leaves the visible layer nearly maximally mixed [5].
+
+Mitigation strategies emerging from current work include:
+
+- **Structured, shallow, or problem-inspired ansätze** rather than fully random deep circuits.
+
+- **Local cost functions** that depend on a small subset of qubits, which empirically reduce gradient collapse but do not fully eliminate it.
+
+- **Alternative loss functions** such as unbounded Rényi-divergence–based objectives, whose gradients remain large when quantum states are nearly orthogonal, thereby escaping some of the assumptions underlying standard barren plateau proofs [5].
+
+The *regression study* provides a concrete illustration of task-dependent behaviour. For a smooth sinusoidal target, a CV QNN achieved mean-squared errors up to seven orders of magnitude smaller than comparable classical networks, highlighting an inductive bias particularly suited for smooth, oscillatory phenomena. For a discontinuous Heaviside step function, this advantage disappeared or reversed, aligning with the “No Free Lunch” intuition: no single model, classical or quantum, dominates across all tasks [4].
+
+At the *ecosystem* level, the systematic review of QML from 2017–2023 shows that:
+
+- QNNs, QCNNs, and VQAs are among the most common QML models, often deployed on simulators or small NISQ devices.
+
+- Applications cluster around image classification, simple regression, chemistry toy problems, and finance/physics proofs-of-concept.
+
+- Real-world advantage is currently constrained by hardware noise, limited qubit counts, and encoding overheads, making fair comparisons to classical baselines non-trivial [6].
+
+Finally, **quantum-cognitive models broaden what “QNNs” can mean**. By interpreting cognitive phenomena (superposed beliefs, contextual judgments, interference effects in decision-making) through quantum probability and mapping them onto neural architectures, these models enable “quantum-inspired” cognitive NNs that run entirely on classical hardware, yet exhibit quantum-like reasoning patterns. This suggests a path where QNN-style ideas can be explored without immediate dependence on quantum hardware, while still providing intuition for future neuromorphic or analog quantum implementations [1].
 
 ## Future Directions
-- Explore ansätze that scale favorably without inducing barren plateaus.
-- Investigate data-reuploading strategies for improving QNN expressivity.
-- Employ layerwise training or block-coordinate descent to mitigate optimization issues.
-- Benchmark VQAs against classical neural networks and quantum-inspired models.
-- Study robustness of QNN architectures under realistic noise conditions.
+- **Ansatz design beyond “depth for expressivity”**
+Explore structured, problem-aligned ansätze (e.g., physics-inspired circuits, symplectic or convolutional structures, local connectivity) that balance expressivity with controllable entanglement and avoid generic barren plateau conditions.
+
+- **Robust training objectives and optimization schemes**
+Further develop loss functions and training strategies—such as Rényi-divergence–based generative objectives, layerwise training, block-coordinate descent, or curriculum learning—to maintain non-vanishing gradients and improve convergence on deep QNNs.
+
+- **Hybrid architectures and Quantum Transfer Learning (QTL)**
+Combine classical feature extractors or pretrained networks with small, well-conditioned QNN “heads”, using QTL-style pipelines in which classical models provide robust representations and quantum components refine decision boundaries or capture high-order correlations. This includes quantum-cognitive mappings where classical NNs are systematically transformed into quantum-inspired analogues.
+
+- **Systematic benchmarking across tasks and regimes**
+Extend regression-style comparisons to a broader spectrum of tasks (classification, generative modelling, sequence learning), ensuring fair matching of parameter counts, training budgets, and data regimes. Identify where QNNs offer genuine gains (e.g., oscillatory targets, quantum data, low-sample/high-structure settings) versus where classical models remain preferable.
+
+- **Noise-aware and resource-efficient QNNs for NISQ hardware**
+Design QNNs explicitly tailored to noisy devices—short-depth circuits, error-mitigated or error-corrected subroutines, and hardware-efficient encodings—to bridge the gap between theoretical advantages and experimentally accessible performance.
+
+- **Integrating quantum cognition and neuromorphic principles**
+Use quantum-cognitive models to guide the design of QNNs that capture human-like uncertainty, context dependence, and memory effects, potentially implemented via neuromorphic or analog quantum hardware. This could lead to QNNs that are not only computationally powerful but also cognitively interpretable [1].
 
 ## References
-- Core VQA literature (Peruzzo et al., McClean et al.)  
-- Papers on barren plateaus and expressivity  
-- Recent work on data reuploading & quantum machine learning architectures
+[1] M. Maksimovic and I. S. Maksymov, Transforming Neural Networks into Quantum-Cognitive Models: A Research Tutorial with Novel Applications, Technologies 13, 183, 2025.
+
+[2] B. Zhang, Quantum Neural Networks: A New Frontier, Proc. 2nd Int. Conf. on Mathematical Physics and Computational Simulation, 2024.
+
+[3] B. S. Neyigapula, Quantum Neural Networks: Paving the Way for Next-Generation Machine Learning, Int. Artif. Intell. & Mach. Learn., vol. 4, no. 2, pp. 92–105, 2024.
+
+[4] G. G. de Lima et al., Assessing the Advantages and Limitations of Quantum Neural Networks in Regression Tasks, arXiv:2509.00854, 2025.
+
+[5] C. Ortiz Marrero et al., Quantum Neural Networks: Issues, Training, and Applications, PNNL-35363, Pacific Northwest National Laboratory, 2023.
+
+[6] D. Peral-García, J. Cruz-Benito, and F. J. García-Peñalvo, Systematic literature review: Quantum machine learning and its applications, Computer Science Review 51, 100619, 2024.
+
