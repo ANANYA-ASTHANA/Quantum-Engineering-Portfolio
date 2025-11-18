@@ -97,15 +97,15 @@ Finally, **quantum-cognitive models broaden what “QNNs” can mean**. By inter
 - **Integrating quantum cognition and neuromorphic principles:** Use quantum-cognitive models to guide the design of QNNs that capture human-like uncertainty, context dependence, and memory effects, potentially implemented via neuromorphic or analog quantum hardware. This could lead to QNNs that are not only computationally powerful but also cognitively interpretable [1].
 
 ## References
-[1] M. Maksimovic and I. S. Maksymov, Transforming Neural Networks into Quantum-Cognitive Models: A Research Tutorial with Novel Applications, Technologies 13, 183, 2025.
+[1] Maksimovic, M., & Maksymov, I. S. (2025). Transforming Neural Networks into Quantum-Cognitive Models: A Research Tutorial with Novel Applications. Technologies, 13(5), 183. https://doi.org/10.3390/technologies13050183
 
-[2] B. Zhang, Quantum Neural Networks: A New Frontier, Proc. 2nd Int. Conf. on Mathematical Physics and Computational Simulation, 2024.
+[2] Zhang, Boyu. (2024). Quantum Neural Networks: A New Frontier. Theoretical and Natural Science. 41. 122-128. 10.54254/2753-8818/41/2024CH0157. 
 
-[3] B. S. Neyigapula, Quantum Neural Networks: Paving the Way for Next-Generation Machine Learning, Int. Artif. Intell. & Mach. Learn., vol. 4, no. 2, pp. 92–105, 2024.
+[3] Bheema Shanker Neyigapula (2024). Quantum Neural Networks: Paving the Way for Next-Generation Machine Learning. International Journal of Artificial Intelligence and Machine Learning, 4(2), 92-105. doi: 10.51483/IJAIML.4.2.2024.92-105.
 
-[4] G. G. de Lima et al., Assessing the Advantages and Limitations of Quantum Neural Networks in Regression Tasks, arXiv:2509.00854, 2025.
+[4] Assessing the Advantages and Limitations of Quantum Neural Networks in Regression Tasks. (2020). Arxiv.org. https://arxiv.org/html/2509.00854v1
+‌
+[5] Marrero, C., Wiebe, N., Furches, J., & Ragone, M. (2023). Quantum Neural Networks: Issues, Training, and Applications. https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-35363.pdf
 
-[5] C. Ortiz Marrero et al., Quantum Neural Networks: Issues, Training, and Applications, PNNL-35363, Pacific Northwest National Laboratory, 2023.
-
-[6] D. Peral-García, J. Cruz-Benito, and F. J. García-Peñalvo, Systematic literature review: Quantum machine learning and its applications, Computer Science Review 51, 100619, 2024.
+[6] Peral-García, D., Cruz-Benito, J., & Francisco José García-Peñalvo. (2024). Systematic literature review: Quantum machine learning and its applications. Computer Science Review, 51, 100619–100619. https://doi.org/10.1016/j.cosrev.2024.100619
 
