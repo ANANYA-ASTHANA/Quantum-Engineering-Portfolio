@@ -295,14 +295,18 @@ These limitations stem from the scope of simulation-only work and can be extende
 
 ## **12. References**
 
-[1] P. W. Shor, “Algorithms for quantum computation: Discrete logarithms and factoring,” *FOCS*, 1994.  
-[2] N. Gisin et al., “Quantum cryptography,” *Rev. Mod. Phys.*, 2002.  
-[3] A. K. Ekert, “Quantum cryptography based on Bell’s theorem,” *Phys. Rev. Lett.*, 1991. 
-[4] M. Lucamarini et al., “Overcoming the rate–distance limit of QKD,” *Nature*, 2018.
-[5] H.-K. Lo, M. Curty, and B. Qi, “Measurement-device-independent quantum key distribution,” *Phys. Rev. Lett.*, 2012.  
-[6] H. S. Nyberg, “Quantum key reconciliation for quantum key distribution,” *IEEE Trans. Inf. Theory*, 2014.  
-[7] L. Trevisan, “Extractors and pseudorandom generators,” *STOC*, 2001.  
-[8] H. Krawczyk, “The HKDF scheme,” *EUROCRYPT*, 2010.  
+[1] Shor, P. W. (1994). Algorithms for quantum computation: discrete logarithms and factoring. Proceedings 35th Annual Symposium on Foundations of Computer Science, 124–134. https://doi.org/10.1109/sfcs.1994.365700
 
+[2] Gisin, N., Ribordy, G., Tittel, W., & Zbinden, H. (2002). Quantum cryptography. Reviews of Modern Physics, 74(1), 145–195. https://doi.org/10.1103/revmodphys.74.145
 
+[3] Ekert, A. (1991). Quantum cryptography based on Bell’s theorem. Physical Review Letters, 67(6), 661–663. https://doi.org/10.1103/PhysRevLett.67.661
 
+[4] Lucamarini, M., Yuan, Z. L., Dynes, J. F., & Shields, A. J. (2018). Overcoming the rate–distance limit of quantum key distribution without quantum repeaters. Nature, 557(7705), 400–403. https://doi.org/10.1038/s41586-018-0066-6
+
+[5] Lo, H.-K., Curty, M., & Qi, B. (2012). Measurement-Device-Independent Quantum Key Distribution. Physical Review Letters, 108(13). https://doi.org/10.1103/physrevlett.108.130503
+
+[6] Elkouss, David & Martínez Mateo, Jesús & Martin, Vicente. (2010). Information Reconciliation for Quantum Key Distribution. Quantum information & computation. 11. 
+
+[7] Trevisan, L. (2001). Extractors and pseudorandom generators. Journal of the ACM, 48(4), 860-879.
+
+[8] Krawczyk, H. (2010, August). Cryptographic extraction and key derivation: The HKDF scheme. In Annual Cryptology Conference (pp. 631-648). Berlin, Heidelberg: Springer Berlin Heidelberg.
