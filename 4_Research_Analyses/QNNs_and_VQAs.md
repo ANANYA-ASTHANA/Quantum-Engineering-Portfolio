@@ -78,19 +78,19 @@ Finally, **quantum-cognitive models broaden what “QNNs” can mean**. By inter
 
 ## Future Directions
 - **Ansatz design beyond “depth for expressivity”**
-Explore structured, problem-aligned ansätze (e.g., physics-inspired circuits, symplectic or convolutional structures, local connectivity) that balance expressivity with controllable entanglement and avoid generic barren plateau conditions.
+Explore structured, problem-aligned ansätze (e.g., physics-inspired circuits, symplectic or convolutional structures, local connectivity) that balance expressivity with controllable entanglement and avoid generic barren plateau conditions [4].
 
 - **Robust training objectives and optimization schemes**
-Further develop loss functions and training strategies—such as Rényi-divergence–based generative objectives, layerwise training, block-coordinate descent, or curriculum learning—to maintain non-vanishing gradients and improve convergence on deep QNNs.
+Further develop loss functions and training strategies—such as Rényi-divergence–based generative objectives, layerwise training, block-coordinate descent, or curriculum learning—to maintain non-vanishing gradients and improve convergence on deep QNNs [5].
 
 - **Hybrid architectures and Quantum Transfer Learning (QTL)**
-Combine classical feature extractors or pretrained networks with small, well-conditioned QNN “heads”, using QTL-style pipelines in which classical models provide robust representations and quantum components refine decision boundaries or capture high-order correlations. This includes quantum-cognitive mappings where classical NNs are systematically transformed into quantum-inspired analogues.
+Combine classical feature extractors or pretrained networks with small, well-conditioned QNN “heads”, using QTL-style pipelines in which classical models provide robust representations and quantum components refine decision boundaries or capture high-order correlations. This includes quantum-cognitive mappings where classical NNs are systematically transformed into quantum-inspired analogues [3].
 
 - **Systematic benchmarking across tasks and regimes**
 Extend regression-style comparisons to a broader spectrum of tasks (classification, generative modelling, sequence learning), ensuring fair matching of parameter counts, training budgets, and data regimes. Identify where QNNs offer genuine gains (e.g., oscillatory targets, quantum data, low-sample/high-structure settings) versus where classical models remain preferable.
 
 - **Noise-aware and resource-efficient QNNs for NISQ hardware**
-Design QNNs explicitly tailored to noisy devices—short-depth circuits, error-mitigated or error-corrected subroutines, and hardware-efficient encodings—to bridge the gap between theoretical advantages and experimentally accessible performance.
+Design QNNs explicitly tailored to noisy devices—short-depth circuits, error-mitigated or error-corrected subroutines, and hardware-efficient encodings—to bridge the gap between theoretical advantages and experimentally accessible performance [6].
 
 - **Integrating quantum cognition and neuromorphic principles**
 Use quantum-cognitive models to guide the design of QNNs that capture human-like uncertainty, context dependence, and memory effects, potentially implemented via neuromorphic or analog quantum hardware. This could lead to QNNs that are not only computationally powerful but also cognitively interpretable [1].
