@@ -105,6 +105,7 @@ Finally, **quantum-cognitive models broaden what “QNNs” can mean**. By inter
 
 [4] Assessing the Advantages and Limitations of Quantum Neural Networks in Regression Tasks. (2020). Arxiv.org. https://arxiv.org/html/2509.00854v1
 ‌
+
 [5] Marrero, C., Wiebe, N., Furches, J., & Ragone, M. (2023). Quantum Neural Networks: Issues, Training, and Applications. https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-35363.pdf
 
 [6] Peral-García, D., Cruz-Benito, J., & Francisco José García-Peñalvo. (2024). Systematic literature review: Quantum machine learning and its applications. Computer Science Review, 51, 100619–100619. https://doi.org/10.1016/j.cosrev.2024.100619
