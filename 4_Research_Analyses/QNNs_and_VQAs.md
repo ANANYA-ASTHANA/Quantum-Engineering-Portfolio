@@ -5,9 +5,9 @@ Quantum neural networks (QNNs) and variational quantum algorithms (VQAs) sit at 
 
 QNNs can be viewed along three complementary axes:
 
-- **Hardware-oriented QNNs:** parameterized quantum circuits (variational quantum circuits, VQCs) trained via classical optimizers to solve supervised, unsupervised, or generative tasks, often in a hybrid quantum–classical workflow [2],[3].
+- **Hardware-oriented QNNs:** parameterized quantum circuits (variational quantum circuits, VQCs) trained via classical optimizers to solve supervised, unsupervised, or generative tasks, often in a hybrid quantum–classical workflow [2], [3].
 
-- **Hybrid QNNs / Quantum Transfer Learning (QTL):** These frameworks utilize classical neural networks, e.g., Convolutional Neural Networks (CNNs) or transformers, to generate feature representations, which are then passed to a quantum submodule for final decision-making. QTL reduces qubit demands and improves convergence, making it suitable for the Noisy Intermediate-Scale Quantum (NISQ) era [3],[4].
+- **Hybrid QNNs / Quantum Transfer Learning (QTL):** These frameworks utilize classical neural networks, e.g., Convolutional Neural Networks (CNNs) or transformers, to generate feature representations, which are then passed to a quantum submodule for final decision-making. QTL reduces qubit demands and improves convergence, making it suitable for the Noisy Intermediate-Scale Quantum (NISQ) era [3], [4].
 
 - **Quantum-inspired / cognitive QNNs:** models that embed quantum principles (superposition, interference, contextuality) into classical or neuromorphic architectures, including recent “quantum-cognitive” constructions that run entirely on standard hardware yet emulate quantum-like cognitive behaviour [1].
 
@@ -17,7 +17,7 @@ From a broader quantum machine-learning (QML) perspective, QNNs and VQAs are amo
 
 ## Key Insights
 ### QNNs as parameterized quantum models
-QNNs are typically realized as parameterized quantum circuits (VQCs) in which data are embedded into quantum states, transformed by trainable unitary operations, and measured to yield classical outputs. These architectures can be fully quantum or hybrid quantum–classical, where a small quantum core is embedded in a larger classical pipeline [2],[3].
+QNNs are typically realized as parameterized quantum circuits (VQCs) in which data are embedded into quantum states, transformed by trainable unitary operations, and measured to yield classical outputs. These architectures can be fully quantum or hybrid quantum–classical, where a small quantum core is embedded in a larger classical pipeline [2], [3].
 
 ### VQAs as a unifying training paradigm
 VQAs minimize a cost function by iteratively sampling expectation values on a quantum device (or simulator) and updating parameters with a classical optimizer. Many QNN training schemes—including variational classifiers, quantum circuit learning, and continuous-variable QNNs—fit naturally into this VQA framework.
@@ -35,7 +35,7 @@ Controlled comparisons between classical neural networks and continuous-variable
 Systematic literature reviews confirm that QNNs and VQAs are central to QML, but most current studies are proof-of-concept on small-scale datasets and noisy intermediate-scale quantum (NISQ) devices or simulators. Demonstrated advantages are often problem-specific and rely on careful design of data encoding, ansatz structure, and hybrid workflows [6].
 
 ### Quantum Transfer Learning (QTL)
-QTL enables the reuse of classical feature extractors, feeding representations into compact quantum circuits for fine-grained decision functions. This enables high performance with fewer qubits and mitigates quantum resource limitations, especially in classification and regression tasks [3],[4].
+QTL enables the reuse of classical feature extractors, feeding representations into compact quantum circuits for fine-grained decision functions. This enables high performance with fewer qubits and mitigates quantum resource limitations, especially in classification and regression tasks [3], [4].
 
 ### Quantum-cognitive and neuromorphic perspectives
 Quantum-cognitive models map classical neural architectures (FNNs, RNNs, Echo State Networks, Bayesian NNs) into quantum-inspired analogues that encode cognitive concepts such as superposed beliefs, contextuality, and probabilistic reasoning—often implementable on a classical laptop. This line of work connects QNNs with neuromorphic computing and quantum cognition theory and suggests alternative, hardware-agnostic paths to “quantum-like” intelligence [1].
