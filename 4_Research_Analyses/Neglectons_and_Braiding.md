@@ -5,9 +5,9 @@ Topological quantum computation (TQC) encodes quantum information in non-local d
 
 A prominent physical platform is the fractional quantum Hall (FQH) state at filling factor $\nu = 5/2$, where the Moore–Read (Pfaffian) phase predicts quasiparticles described by the Ising modular tensor category [1], [6]. The topological charges:
 
-\[
-\{ 1, \sigma, \psi \}
-\]
+$$
+{1, \sigma, \psi}
+$$
 
 satisfy fusion rules including:
 
@@ -87,7 +87,7 @@ Monte Carlo–enhanced Solovay–Kitaev compilation using elementary braiding ma
 - $T$-gate
 - $CNOT$
 
-with shallow recursion depth (≤3) [4].
+with shallow recursion depth $(\leq 3)$ [4].
 
 This provides operational support for universal computation without auxiliary non-topological resources.
 
