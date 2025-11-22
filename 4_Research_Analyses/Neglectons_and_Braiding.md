@@ -161,7 +161,7 @@ Affine braiding introduces continuously parameterized matrices rather than fixed
 
 ## References
 
-[1] G. Moore and N. Read, “Nonabelions in the fractional quantum Hall effect,” *Nucl. Phys. B*, vol. 360, 1991.  
+[1] G. Moore and N. Read, “Nonabelions in the fractional quantum Hall effect,” *Nucl. Phys. B*, vol. 360, 1991. 
 [2] F. Iulianelli et al., *Universal Quantum Computation Using Ising Anyons from a Non-Semisimple TQFT*, 2025.  
 [3] *From Negligible to Neglecton: Renormalized Traces in Logarithmic TQFT*, 2025.  
 [4] J. Long, Y. Li, J. Zhong, and L. Meng, *Topological Quantum Compilation for Non-Semisimple Ising Anyons via Monte Carlo Simulations*, 2025.  
