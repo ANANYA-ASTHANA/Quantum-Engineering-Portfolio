@@ -9,6 +9,13 @@ $$
 {1, \sigma, \psi}
 $$
 
+### Topological Charge Notation
+
+- **$1$** — vacuum sector (trivial charge)
+- **$\sigma$** — Ising anyon corresponding to non-Abelian quasiparticles in the Moore–Read $\nu = 5/2$ phase [1]
+- **$\psi$** — fermionic Abelian anyon obtained from fusing two $\sigma$ particles
+- **$\alpha$** — neglecton; an indecomposable excitation arising in non-semisimple extensions of the Ising theory, forming a continuous family indexed by a real parameter rather than a discrete simple object [3], [4]
+
 satisfy fusion rules including:
 
 $$
