@@ -15,6 +15,8 @@ VQAs form the algorithmic backbone for many QNNs. They define a cost function, e
 
 From a broader quantum machine-learning (QML) perspective, QNNs and VQAs are among the most widely studied quantum learning models in recent literature reviews, with applications in classification, regression, generative modelling, quantum chemistry, finance, and physics-inspired tasks [5].
 
+---
+
 ## Key Insights
 ### QNNs as parameterized quantum models
 QNNs are typically realized as parameterized quantum circuits (VQCs) in which data are embedded into quantum states, transformed by trainable unitary operations, and measured to yield classical outputs. These architectures can be fully quantum or hybrid quantum–classical, where a small quantum core is embedded in a larger classical pipeline [1], [2].
@@ -39,6 +41,8 @@ QTL enables the reuse of classical feature extractors, feeding representations i
 
 ### Quantum-cognitive and neuromorphic perspectives
 Quantum-cognitive models map classical neural architectures (FNNs, RNNs, Echo State Networks, Bayesian NNs) into quantum-inspired analogues that encode cognitive concepts such as superposed beliefs, contextuality, and probabilistic reasoning—often implementable on a classical laptop. This line of work connects QNNs with neuromorphic computing and quantum cognition theory and suggests alternative, hardware-agnostic paths to “quantum-like” intelligence [4].
+
+---
 
 ## Analytical Commentary
 QNNs and VQAs can be interpreted as *trainable quantum feature maps*. Classical data are encoded into quantum states—through basis, amplitude, or continuous-variable encodings—then transformed by a parameterized sequence of gates. The resulting state defines a learned representation; measurement maps it back to classical outputs.
@@ -83,6 +87,8 @@ At the *ecosystem* level, the systematic review of QML from 2017–2023 shows th
 
 Finally, **quantum-cognitive models broaden what “QNNs” can mean**. By interpreting cognitive phenomena (superposed beliefs, contextual judgments, interference effects in decision-making) through quantum probability and mapping them onto neural architectures, these models enable “quantum-inspired” cognitive NNs that run entirely on classical hardware, yet exhibit quantum-like reasoning patterns. This suggests a path where QNN-style ideas can be explored without immediate dependence on quantum hardware, while still providing intuition for future neuromorphic or analog quantum implementations [4].
 
+---
+
 ## Future Directions
 - **Ansatz design beyond “depth for expressivity”:** Explore structured, problem-aligned ansätze (e.g., physics-inspired circuits, symplectic or convolutional structures, local connectivity) that balance expressivity with controllable entanglement and avoid generic barren plateau conditions [3].
 
@@ -95,6 +101,8 @@ Finally, **quantum-cognitive models broaden what “QNNs” can mean**. By inter
 - **Noise-aware and resource-efficient QNNs for NISQ hardware:** Design QNNs explicitly tailored to noisy devices—short-depth circuits, error-mitigated or error-corrected subroutines, and hardware-efficient encodings—to bridge the gap between theoretical advantages and experimentally accessible performance [5].
 
 - **Integrating quantum cognition and neuromorphic principles:** Use quantum-cognitive models to guide the design of QNNs that capture human-like uncertainty, context dependence, and memory effects, potentially implemented via neuromorphic or analog quantum hardware. This could lead to QNNs that are not only computationally powerful but also cognitively interpretable [4].
+
+---
 
 ## References
 [1] Zhang, Boyu. (2024). Quantum Neural Networks: A New Frontier. Theoretical and Natural Science. 41. 122-128. 10.54254/2753-8818/41/2024CH0157. 
