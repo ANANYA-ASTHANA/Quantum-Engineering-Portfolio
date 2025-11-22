@@ -42,7 +42,7 @@ Thus, neglectons offer a middle ground between theoretical universality and prac
 
 ### Scope of This Analysis
 This research analysis synthesizes findings on:
-- the mathematical structure of neglectons within non-semisimple TQFTs [1],[3],
+- the mathematical structure of neglectons within non-semisimple TQFTs [1], [3],
 - their impact on fusion, braiding, and universality [4],
 - numerical compilation of universal gate sets [6],
 - and conceptual extensions relating to cognition as proposed by speculative literature [7].
