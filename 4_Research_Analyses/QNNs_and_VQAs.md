@@ -1,6 +1,6 @@
 # Quantum Neural Networks (QNNs) & Variational Quantum Algorithms (VQAs)
 
-## Research Context
+## Background & Motivation
 Quantum neural networks (QNNs) and variational quantum algorithms (VQAs) sit at the intersection of quantum computing and machine learning, aiming to exploit superposition, entanglement, and quantum parallelism to represent and process information in ways that go beyond classical neural networks.
 
 QNNs can be viewed along three complementary axes:
@@ -17,7 +17,7 @@ From a broader quantum machine-learning (QML) perspective, QNNs and VQAs are amo
 
 ---
 
-## Key Insights
+## Theoretical Foundations
 ### QNNs as parameterized quantum models
 QNNs are typically realized as parameterized quantum circuits (VQCs) in which data are embedded into quantum states, transformed by trainable unitary operations, and measured to yield classical outputs. These architectures can be fully quantum or hybrid quantum–classical, where a small quantum core is embedded in a larger classical pipeline [1], [2].
 
@@ -44,7 +44,7 @@ Quantum-cognitive models map classical neural architectures (FNNs, RNNs, Echo St
 
 ---
 
-## Analytical Commentary
+## Analysis & Interpretation
 QNNs and VQAs can be interpreted as *trainable quantum feature maps*. Classical data are encoded into quantum states—through basis, amplitude, or continuous-variable encodings—then transformed by a parameterized sequence of gates. The resulting state defines a learned representation; measurement maps it back to classical outputs.
 
 From the *architectural* standpoint, the QNN literature distinguishes between:
@@ -89,7 +89,7 @@ Finally, **quantum-cognitive models broaden what “QNNs” can mean**. By inter
 
 ---
 
-## Future Directions
+## Open Problems & Research Directions
 - **Ansatz design beyond “depth for expressivity”:** Explore structured, problem-aligned ansätze (e.g., physics-inspired circuits, symplectic or convolutional structures, local connectivity) that balance expressivity with controllable entanglement and avoid generic barren plateau conditions [3].
 
 - **Robust training objectives and optimization schemes:** Further develop loss functions and training strategies—such as Rényi-divergence–based generative objectives, layerwise training, block-coordinate descent, or curriculum learning—to maintain non-vanishing gradients and improve convergence on deep QNNs [6].
