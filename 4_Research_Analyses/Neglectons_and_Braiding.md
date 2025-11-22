@@ -3,7 +3,7 @@
 ## Research Context
 Topological quantum computation (TQC) encodes quantum information in non-local degrees of freedom associated with quasiparticles exhibiting non-Abelian exchange statistics. The resulting unitary evolution depends only on the topology of braiding worldlines, rather than on local dynamical fluctuations, enabling intrinsic fault tolerance [1], [6].
 
-A prominent physical platform is the fractional quantum Hall (FQH) state at filling factor \( \nu = 5/2 \), where the Moore–Read (Pfaffian) phase predicts quasiparticles described by the Ising modular tensor category [1], [6]. The topological charges:
+A prominent physical platform is the fractional quantum Hall (FQH) state at filling factor $\nu = 5/2$, where the Moore–Read (Pfaffian) phase predicts quasiparticles described by the Ising modular tensor category [1], [6]. The topological charges:
 
 \[
 \{ 1, \sigma, \psi \}
@@ -31,7 +31,7 @@ In this generalized setting, the set of topological charges expands beyond ${1,\
 ### Computational Motivation
 Semisimple Ising anyon systems implement only Clifford operations under braiding, as their braid group representations have finite image and cannot approximate arbitrary rotations. As a result, universal quantum computation requires additional non-topological resources, typically magic-state distillation or projective measurements, which dominate hardware overhead in Ising–Majorana platforms [6], [7].
 
-Non-semisimple extensions modify the braid group action by introducing indecomposable excitations that promote the ordinary braid group \(B_n\) to affine braid representations, enabling continuously parameterized unitary gates. This restores universality under braiding alone, removing the need for magic-state distillation and aligning computational power with that of models such as Fibonacci anyons—while preserving ties to experimentally supported Ising platforms [2], [4].
+Non-semisimple extensions modify the braid group action by introducing indecomposable excitations that promote the ordinary braid group $B_n$ to affine braid representations, enabling continuously parameterized unitary gates. This restores universality under braiding alone, removing the need for magic-state distillation and aligning computational power with that of models such as Fibonacci anyons—while preserving ties to experimentally supported Ising platforms [2], [4].
 
 Thus, neglectons offer a middle ground between theoretical universality and practical feasibility:  
 
@@ -47,7 +47,7 @@ This research analysis synthesizes findings on:
 - numerical compilation of universal gate sets [4],
 - and conceptual extensions relating to cognition as proposed by speculative literature [5].
 
-External citations are included only where historically and scientifically necessary to contextualize well-established aspects of TQC (e.g., Ising anyons in \( \nu = 5/2 \) QH systems [6]).
+External citations are included only where historically and scientifically necessary to contextualize well-established aspects of TQC (e.g., Ising anyons in $\nu = 5/2$ QH systems [6]).
 
 The subsequent sections expand on theoretical insights, mathematical foundations, computational implications, and open problems in this emerging framework.
 
@@ -55,7 +55,7 @@ The subsequent sections expand on theoretical insights, mathematical foundations
 
 ## Key Insights
 ### Neglectons Extend the Ising Fusion Theory
-Neglectons emerge when trace-zero objects removed during semisimplification are retained via renormalized quantum traces. They expand the set of topological charges beyond \( \{1, \sigma, \psi\} \) to a parameterized family \( \alpha \in \mathbb{R} \) [2], [3].
+Neglectons emerge when trace-zero objects removed during semisimplification are retained via renormalized quantum traces. They expand the set of topological charges beyond ${1, \sigma, \psi\}$ to a parameterized family $\alpha \in \mathbb{R}$ [2], [3].
 
 A representative extended fusion rule:
 
@@ -72,33 +72,33 @@ $$
 B_n \rightarrow \text{Aff}(B_n)
 $$
 
-This allows continuous families of braid representations dense in \( SU(2) \), restoring universality for suitable \( \alpha \) values [2].
+This allows continuous families of braid representations dense in $SU(2)$, restoring universality for suitable $\alpha$ values [2].
 
 By contrast:
 
-- Semisimple Ising → Clifford only
-- Fibonacci → universal but not experimentally verified
-- Neglecton-Ising → universal *and plausibly physical*
+- Semisimple Ising $\rightarrow$ Clifford only
+- Fibonacci $\rightarrow$ universal but not experimentally verified
+- Neglecton-Ising $\rightarrow$ universal *and plausibly physical*
 
 ### Numerical Gate Synthesis
 Monte Carlo–enhanced Solovay–Kitaev compilation using elementary braiding matrices yields efficient approximations of:
 
-- \(H\)-gate
-- \(T\)-gate
-- CNOT
+- $H$-gate
+- $T$-gate
+- $CNOT$
 
 with shallow recursion depth (≤3) [4].
 
 This provides operational support for universal computation without auxiliary non-topological resources.
 
-### Relation to \( \nu = 5/2 \) Physics
-Ising anyons already appear in experimental signatures of the \( \nu = 5/2 \) FQH state. Neglectons may emerge as refinements of these phases through altered edge conditions, symmetry breaking, or engineered defects [2], [3].
+### Relation to $\nu = 5/2$ Physics
+Ising anyons already appear in experimental signatures of the $\nu = 5/2$ FQH state. Neglectons may emerge as refinements of these phases through altered edge conditions, symmetry breaking, or engineered defects [2], [3].
 
 ---
 
 ## Analytical Commentary
 ### Semisimplification vs. Non-Semisimple Reconstruction
-Semisimple Ising TQFT discards representations with \( \text{qdim} = 0 \) to maintain modularity. Non-semisimple extensions retain them using renormalized traces:
+Semisimple Ising TQFT discards representations with $\text{qdim} = 0$ to maintain modularity. Non-semisimple extensions retain them using renormalized traces:
 
 $$
 \text{tr}_R(X) \neq 0 \quad \text{even if} \quad \text{qdim}(X)=0
@@ -119,7 +119,7 @@ $$
 \mathcal{H}_{\text{comp}} \subset \mathcal{H}
 $$
 
-for certain \( \alpha \), decoupling from unphysical leakage channels [2].
+for certain $\alpha$, decoupling from unphysical leakage channels [2].
 
 ### Hierarchical Fusion Channels
 Neglectons are organized in chains:
@@ -131,24 +131,24 @@ $$
 inducing layered fusion spaces with internal morphisms rather than direct sums of simples [3].
 
 ### Affine Braid Representations
-Affine braiding introduces continuously parameterized matrices rather than fixed Clifford transformations, permitting dense coverage of \( SU(2) \) [2].
+Affine braiding introduces continuously parameterized matrices rather than fixed Clifford transformations, permitting dense coverage of $SU(2)$ [2].
 
 ---
 
 ## Future Directions
-- **Physical realization of non-semisimple phases**: Develop Hamiltonians or engineered topological media that realize neglectons as quasiparticles rather than purely categorical constructs, including modified boundary conditions in \( \nu = 5/2 \) systems and hybrid Majorana platforms [2], [3].
+- **Physical realization of non-semisimple phases**: Develop Hamiltonians or engineered topological media that realize neglectons as quasiparticles rather than purely categorical constructs, including modified boundary conditions in $\nu = 5/2$ systems and hybrid Majorana platforms [2], [3].
 
 - **Fault-tolerance in mixed-signature spaces**: Define noise models, stabilizer analogues, and threshold conditions when computational subspaces coexist with indefinite inner products [2].
 
 - **Resource comparison vs. magic-state architectures**: Benchmark braid depth, coherence requirements, and error rates relative to Clifford+T and Fibonacci qubits; early evidence suggests efficient compilation [4].
 
-- **Classifying the \( \alpha \)-parameter family**: Map universality domains, unitarity conditions, and anomaly-free parameter ranges connecting neglectons to logarithmic CFT structures [3].
+- **Classifying the $\alpha$-parameter family**: Map universality domains, unitarity conditions, and anomaly-free parameter ranges connecting neglectons to logarithmic CFT structures [3].
 
 - **Observable signatures**:  Establish measurable consequences, such as altered tunneling conductance, modified quasiparticle statistics, or entanglement-spectrum deviations.
 
 ---
 
-## Speculative Extensions (Not Empirically Supported)
+## Speculative Extensions (Not Supported by Empirical Evidence)
 - **Bulk–boundary separation as persistent internal state**: Indecomposable internal sectors have been analogized to persistent memory or identity structures in cognitive systems; such claims are conceptual, without evidence [5].
 
 - **Affine braiding as irreversible information flow**: Non-contractible holonomies have been interpreted metaphorically as long-range memory traces; no physical support exists [5].
