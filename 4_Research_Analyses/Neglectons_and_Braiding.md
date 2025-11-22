@@ -161,16 +161,16 @@ Affine braiding introduces continuously parameterized matrices rather than fixed
 
 ## References
 
-[1] G. Moore and N. Read, “Nonabelions in the fractional quantum Hall effect,” *Nucl. Phys. B*, vol. 360, 1991.
+[1] Moore, G. W., & Read, N. W. (1991). Nonabelions in the fractional quantum hall effect. 360(2-3), 362–396. https://doi.org/10.1016/0550-3213(91)90407-o
 
-[2] C. Nayak, S. H. Simon, A. Stern, M. Freedman, and S. Das Sarma, “Non-Abelian Anyons and Topological Quantum Computation,” *Rev. Mod. Phys.*, vol. 80, 2008.
+[2] Nayak, C., Simon, S. H., Stern, A., Freedman, M., & Das Sarma, S. (2008). Non-Abelian anyons and topological quantum computation. Reviews of Modern Physics, 80(3), 1083–1159. https://doi.org/10.1103/revmodphys.80.1083
 
-[3] *From Negligible to Neglecton: Renormalized Traces in Logarithmic TQFT*, 2025.
+[3] Iulianelli, F., Kim, S., Sussan, J., & Lauda, A. D. (2025). From negligible to neglecton: making Ising anyons braiding universal. arXiv preprint arXiv:2509.02843.
 
-[4] F. Iulianelli et al., *Universal Quantum Computation Using Ising Anyons from a Non-Semisimple TQFT*, 2025.
+[4] Iulianelli, F., Kim, S., Sussan, J., & Lauda, A. D. (2025). Universal quantum computation using Ising anyons from a non-semisimple topological quantum field theory. Nature Communications, 16(1). https://doi.org/10.1038/s41467-025-61342-8
 
-[5] A. Y. Kitaev, “Fault-Tolerant Quantum Computation by Anyons,” *Ann. Phys.*, vol. 303, 2003.
+[5] Kitaev, A. Yu. (2003). Fault-tolerant quantum computation by anyons. Annals of Physics, 303(1), 2–30. https://doi.org/10.1016/S0003-4916(02)00018-0
 
-[6] J. Long, Y. Li, J. Zhong, and L. Meng, *Topological Quantum Compilation for Non-Semisimple Ising Anyons via Monte Carlo Simulations*, 2025.
+[6] Long, J., Li, Y., Zhong, J., & Meng, L. (2025). Topological quantum compilation for non-semisimple Ising anyons via monte carlo simulations. arXiv preprint arXiv:2511.13194.
 
-[7] M. Planat, *Murakamian Ombre: Non-Semisimple Topology, Cayley Cubics, and the Foundations of a Conscious AGI*, Preprints.org, 2025.
+[7] Planat, M. (2025). Murakamian Ombre: Non-Semisimple Topology, Cayley Cubics, and the Foundations of a Conscious AGI.
