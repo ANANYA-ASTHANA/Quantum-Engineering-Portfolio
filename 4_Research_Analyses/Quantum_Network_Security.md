@@ -5,7 +5,7 @@ The accelerating progress of quantum computing threatens the foundational securi
 
 Meanwhile, emerging demands in classical networking — such as 6G networks, distributed IoT systems, and cloud-scale applications — require resilient, scalable security architectures. Quantum-secure communication design is becoming essential to future-proof these infrastructures.
 
---
+---
 
 ## Key Insights
 ### 1. Quantum Cryptography and Quantum-Resistant Architectures
@@ -46,7 +46,7 @@ Implementing QKD within existing classical networks requires:
 
 This makes QKD not a standalone replacement, but a high-assurance layer alongside existing, agile cryptographic stacks.
 
---
+---
 
 ## Analytical Commentary
 A complete quantum-secure architecture must be layered, adaptable, and operationally feasible across diverse network requirements:
@@ -56,7 +56,7 @@ A complete quantum-secure architecture must be layered, adaptable, and operation
 
 This tiered approach enables appropriateness — where each network type receives the highest security guarantees that align with its operational scale, latency, and threat profile.
 
---
+---
 
 ## Future Directions
 There exists significant scope for future research and enhancement, especially in the following areas:
@@ -68,16 +68,21 @@ There exists significant scope for future research and enhancement, especially i
 
 These directions are crucial for real-world viability and efficiency of future-proof, hybrid quantum-secure architectures.
 
---
+---
 
 ## References
 [1] Shor, P. W. (1994). Algorithms for quantum computation: discrete logarithms and factoring. Proceedings 35th Annual Symposium on Foundations of Computer Science, 124–134. https://doi.org/10.1109/sfcs.1994.365700
+
 [2] Gisin, N., Ribordy, G., Tittel, W., & Zbinden, H. (2002). Quantum cryptography. Reviews of Modern Physics, 74(1), 145–195. https://doi.org/10.1103/revmodphys.74.145
+
 [3] Bernstein, D. J., & Lange, T. (2017). Post-quantum cryptography. Nature, 549(7671), 188–194. https://doi.org/10.1038/nature23461
 
 [4] Ekert, A. (1991). Quantum cryptography based on Bell’s theorem. Physical Review Letters, 67(6), 661–663. https://doi.org/10.1103/PhysRevLett.67.661
 
 [5] Lucamarini, M., Yuan, Z. L., Dynes, J. F., & Shields, A. J. (2018). Overcoming the rate–distance limit of quantum key distribution without quantum repeaters. Nature, 557(7705), 400–403. https://doi.org/10.1038/s41586-018-0066-6
+
 [6] Lo, H.-K., Curty, M., & Qi, B. (2012). Measurement-Device-Independent Quantum Key Distribution. Physical Review Letters, 108(13). https://doi.org/10.1103/physrevlett.108.130503
+
 [7] Grover, L. K. (1996). A fast quantum mechanical algorithm for database search. Proceedings of the Twenty-Eighth Annual ACM Symposium on Theory of Computing - STOC ’96. https://doi.org/10.1145/237814.237866
+
 [8] Herrero-Collantes, M., & Garcia-Escartin, J. C. (2017). Quantum random number generators. Reviews of Modern Physics, 89(1). https://doi.org/10.1103/revmodphys.89.015004
