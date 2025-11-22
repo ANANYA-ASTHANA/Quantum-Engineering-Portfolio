@@ -54,7 +54,7 @@ This research analysis synthesizes findings on:
 - numerical compilation of universal gate sets [6],
 - and conceptual extensions relating to cognition as proposed by speculative literature [7].
 
-External citations are included only where historically and scientifically necessary to contextualize well-established aspects of TQC (e.g., Ising anyons in $\nu = 5/2$ QH systems [2]).
+External citations are included only where historically and scientifically necessary to contextualize well-established aspects of TQC (e.g., Ising anyons in $\nu = 5/2$ FQH systems [2]).
 
 The subsequent sections expand on theoretical insights, mathematical foundations, computational implications, and open problems in this emerging framework.
 
@@ -88,7 +88,7 @@ By contrast:
 - Neglecton-Ising $\rightarrow$ universal *and plausibly physical*
 
 ### Numerical Gate Synthesis
-Monte Carlo–enhanced Solovay–Kitaev compilation using elementary braiding matrices yields efficient approximations of:
+Monte Carlo–enhanced Solovay–Kitaev compilation using elementary braiding matrices (EBMs) yields efficient approximations of:
 
 - $H$-gate
 - $T$-gate
@@ -149,7 +149,7 @@ Affine braiding introduces continuously parameterized matrices rather than fixed
 
 - **Resource comparison vs. magic-state architectures**: Benchmark braid depth, coherence requirements, and error rates relative to Clifford+T and Fibonacci qubits; early evidence suggests efficient compilation [6].
 
-- **Classifying the $\alpha$-parameter family**: Map universality domains, unitarity conditions, and anomaly-free parameter ranges connecting neglectons to logarithmic CFT structures [3].
+- **Classifying the $\alpha$-parameter family**: Map universality domains, unitarity conditions, and anomaly-free parameter ranges connecting neglectons to logarithmic conformal field theory (CFT) structures [3].
 
 - **Observable signatures**: Establish measurable consequences, such as altered tunneling conductance, modified quasiparticle statistics, or entanglement-spectrum deviations.
 
@@ -160,7 +160,7 @@ Affine braiding introduces continuously parameterized matrices rather than fixed
 
 - **Affine braiding as irreversible information flow**: Fixing a neglecton transforms ordinary braids into affine braids with non-contractible holonomies. Speculative interpretations suggest these holonomies represent memory traces or state-dependent computational pathways that cannot be erased by shallow symbolic transformations. While mathematically interesting, this interpretation has no support in physics, neuroscience, or machine learning, and should be treated as a metaphor rather than a mechanism [7].
 
-- **Cayley cubic singularities and "cognitive depth"**: Non-semisimple topological models modify the moduli space of flat connections to a Cayley cubic variety with parabolic singularities. These singularities have been proposed as mathematical analogues for subjective depth, asymmetry in cognitive processes, or non-local processing layers in AGI systems. These ideas lie outside the domain of physical theory and lack empirical grounding; they remain speculative conceptual analogies [7].
+- **Cayley cubic singularities and "cognitive depth"**: Non-semisimple topological models modify the moduli space of flat connections to a Cayley cubic variety with parabolic singularities. These singularities have been proposed as mathematical analogues for subjective depth, asymmetry in cognitive processes, or non-local processing layers in artificial general intelligence (AGI) systems. These ideas lie outside the domain of physical theory and lack empirical grounding; they remain speculative conceptual analogies [7].
 
 - **Scope restriction**: This analysis evaluates neglectons strictly as non-semisimple topological excitations relevant to universal braiding-based quantum computation. It does **not** endorse, validate, or evaluate claims related to consciousness, phenomenology, or artificial general intelligence, as these claims lack empirical support and fall outside the scope of both quantum computation and topological field theory.
 
