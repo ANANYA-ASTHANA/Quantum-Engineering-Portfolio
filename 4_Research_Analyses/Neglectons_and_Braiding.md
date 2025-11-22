@@ -1,6 +1,6 @@
 # Neglectons & Braiding
 
-## Research Context
+## Background & Motivation
 Topological quantum computation (TQC) encodes quantum information in non-local degrees of freedom associated with quasiparticles exhibiting non-Abelian exchange statistics. The resulting unitary evolution depends only on the topology of braiding worldlines, rather than on local dynamical fluctuations, enabling intrinsic fault tolerance [1], [2].
 
 A prominent physical platform is the fractional quantum Hall (FQH) state at filling factor $\nu = 5/2$, where the Moore–Read (Pfaffian) phase predicts quasiparticles described by the Ising modular tensor category [1], [2]. The topological charges:
@@ -53,7 +53,7 @@ The subsequent sections expand on theoretical insights, mathematical foundations
 
 ---
 
-## Key Insights
+## Theoretical Foundations
 ### Neglectons Extend the Ising Fusion Theory
 Neglectons emerge when trace-zero objects removed during semisimplification are retained via renormalized quantum traces. They expand the set of topological charges beyond ${1, \sigma, \psi\}$ to a parameterized family $\alpha \in \mathbb{R}$ [3], [4].
 
@@ -96,7 +96,7 @@ Ising anyons already appear in experimental signatures of the $\nu = 5/2$ FQH st
 
 ---
 
-## Analytical Commentary
+## Analysis & Interpretation
 ### Semisimplification vs. Non-Semisimple Reconstruction
 Semisimple Ising TQFT discards representations with $\text{qdim} = 0$ to maintain modularity. Non-semisimple extensions retain them using renormalized traces:
 
@@ -135,7 +135,7 @@ Affine braiding introduces continuously parameterized matrices rather than fixed
 
 ---
 
-## Future Directions
+## Open Problems & Research Directions
 - **Physical realization of non-semisimple phases**: Develop Hamiltonians or engineered topological media that realize neglectons as quasiparticles rather than purely categorical constructs, including modified boundary conditions in $\nu = 5/2$ systems and hybrid Majorana platforms [3], [4].
 
 - **Fault-tolerance in mixed-signature spaces**: Define noise models, stabilizer analogues, and threshold conditions when computational subspaces coexist with indefinite inner products [4].
