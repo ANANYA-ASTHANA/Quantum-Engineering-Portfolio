@@ -1,13 +1,13 @@
 # Quantum Network Security
 
-## Research Context
+## Background & Motivation
 The accelerating progress of quantum computing threatens the foundational security of classical cryptographic systems. Quantum algorithms like **Shor’s** demonstrate the theorectical possibility of solving the **integer factorization** and **discrete logarithms** problems in polynomial time, breaking the security of widely deployed asymmetric encryption schemes such as **RSA** and **Elliptic Curve Cryptography (ECC)** [1] — both critical to internet security, digital signatures, and secure web transactions. If realized at scale, quantum adversaries could decrypt confidential communication, forge transactions, and compromise global data integrity.
 
 Meanwhile, emerging demands in classical networking — such as 6G networks, distributed IoT systems, and cloud-scale applications — require resilient, scalable security architectures. Quantum-secure communication design is becoming essential to future-proof these infrastructures.
 
 ---
 
-## Key Insights
+## Theoretical Foundations
 ### 1. Quantum Cryptography and Quantum-Resistant Architectures
 Quantum-safe cryptography can be classified into two complementary paradigms:
 - **Quantum Cryptography**, primarily **Quantum Key Distribution (QKD)**, which provides information-theoretic key security based on the laws of quantum mechanics [2].
@@ -48,7 +48,7 @@ This makes QKD not a standalone replacement, but a high-assurance layer alongsid
 
 ---
 
-## Analytical Commentary
+## Analysis & Interpretation
 A complete quantum-secure architecture must be layered, adaptable, and operationally feasible across diverse network requirements:
 - **High-profile core networks** can benefit from **QKD + AES-256**, ensuring end-to-end physical-layer secure key exchange and high-throughput encryption.
 - **Telecommunication backbones**, with large-scale, geographically distributed communication, can deploy **PQC-based schemes (e.g., lattice-based KEMs)** to secure public interfaces without major changes to routing infrastructure.
@@ -58,7 +58,7 @@ This tiered approach enables appropriateness — where each network type receive
 
 ---
 
-## Future Directions
+## Open Problems & Research Directions
 There exists significant scope for future research and enhancement, especially in the following areas:
 -	**Resource Optimization in QKD:** Investigating lightweight, low-energy QKD models suitable for constrained environments or satellites.
 -	**Advanced Key Reconciliation Techniques:** Exploring Polar codes, Cascade protocols, or AI-assisted error correction for improved QBER tolerance and efficiency.
