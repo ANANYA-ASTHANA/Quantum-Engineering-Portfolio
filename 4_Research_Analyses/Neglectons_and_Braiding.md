@@ -144,18 +144,18 @@ Affine braiding introduces continuously parameterized matrices rather than fixed
 
 - **Classifying the $\alpha$-parameter family**: Map universality domains, unitarity conditions, and anomaly-free parameter ranges connecting neglectons to logarithmic CFT structures [3].
 
-- **Observable signatures**:  Establish measurable consequences, such as altered tunneling conductance, modified quasiparticle statistics, or entanglement-spectrum deviations.
+- **Observable signatures**: Establish measurable consequences, such as altered tunneling conductance, modified quasiparticle statistics, or entanglement-spectrum deviations.
 
 ---
 
 ## Speculative Extensions (Not Supported by Empirical Evidence)
-- **Bulk–boundary separation as persistent internal state**: Indecomposable internal sectors have been analogized to persistent memory or identity structures in cognitive systems; such claims are conceptual, without evidence [7].
+- **Bulk–boundary separation as persistent internal state**: In semisimple topological phases, all physical degrees of freedom reduce to boundary-observable sectors, meaning internal structure is fully encoded in edge excitations. In non-semisimple models, neglectons introduce indecomposable bulk sectors that cannot be reduced to boundary data alone. Some authors draw analogies between these bulk degrees of freedom and persistent internal states underlying cognitive continuity or identity, but such claims remain philosophical and lack experimental or computational evidence [7].
 
-- **Affine braiding as irreversible information flow**: Non-contractible holonomies have been interpreted metaphorically as long-range memory traces; no physical support exists [7].
+- **Affine braiding as irreversible information flow**: Fixing a neglecton transforms ordinary braids into affine braids with non-contractible holonomies. Speculative interpretations suggest these holonomies represent memory traces or state-dependent computational pathways that cannot be erased by shallow symbolic transformations. While mathematically interesting, this interpretation has no support in physics, neuroscience, or machine learning, and should be treated as a metaphor rather than a mechanism [7].
 
-- **Cayley cubic singularities and cognitive depth**: Parabolic singularities in the modified moduli space have been linked philosophically to cognitive asymmetry, not experimentally or theoretically validated [7].
+- **Cayley cubic singularities and "cognitive depth"**: Non-semisimple topological models modify the moduli space of flat connections to a Cayley cubic variety with parabolic singularities. These singularities have been proposed as mathematical analogues for subjective depth, asymmetry in cognitive processes, or non-local processing layers in AGI systems. These ideas lie outside the domain of physical theory and lack empirical grounding; they remain speculative conceptual analogies [7].
 
-- **Scope restriction**: This document treats neglectons strictly as topological excitations relevant to quantum computation, not cognitive architecture.
+- **Scope restriction**: This analysis evaluates neglectons strictly as non-semisimple topological excitations relevant to universal braiding-based quantum computation. It does **not** endorse, validate, or evaluate claims related to consciousness, phenomenology, or artificial general intelligence, as these claims lack empirical support and fall outside the scope of both quantum computation and topological field theory.
 
 ---
 
