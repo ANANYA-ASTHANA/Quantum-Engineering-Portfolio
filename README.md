@@ -36,7 +36,7 @@ Applied system bridging quantum and classical cryptography, with the following p
 ### 4. Research_Analyses/  
 Analytical reviews addressing frontier topics in quantum information science:  
 - Quantum Neural Networks (QNNs) for encoding and optimization  
-- Neglecton-based braiding mechanisms for fault-tolerant computation  
+- Neglecton-based braiding mechanisms for universal topological quantum computation (TQC)
 - Hybrid PQC–Quantum architectures for scalable long-term security  
 
 Each entry synthesizes literature insights, identifies open challenges, and outlines pathways for implementation.
