@@ -99,7 +99,7 @@ with shallow recursion depth $(\leq 3)$ [6].
 This provides operational support for universal computation without auxiliary non-topological resources.
 
 ### Relation to $\nu = 5/2$ Physics
-Ising anyons already appear in experimental signatures of the $\nu = 5/2$ FQH state. Neglectons may emerge as refinements of these phases through altered edge conditions, symmetry breaking, or engineered defects [3], [4].
+Ising anyons already appear in experimental signatures of the $\nu = 5/2$ FQH state. Neglectons may emerge as refinements of these phases through altered edge boundary conditions in the FQH-to-CFT correspondence framework, symmetry breaking, or engineered defects [3], [4].
 
 ---
 
@@ -149,7 +149,7 @@ Affine braiding introduces continuously parameterized matrices rather than fixed
 
 - **Resource comparison vs. magic-state architectures**: Benchmark braid depth, coherence requirements, and error rates relative to Clifford+T and Fibonacci qubits; early evidence suggests efficient compilation [6].
 
-- **Classifying the $\alpha$-parameter family**: Map universality domains, unitarity conditions, and anomaly-free parameter ranges connecting neglectons to logarithmic conformal field theory (CFT) structures [3].
+- **Classifying the $\alpha$-parameter family**: Map universality domains, unitarity conditions, and anomaly-free parameter ranges connecting neglectons to logarithmic conformal field theory (CFT) structures [3], whose representations admit Jordan blocks and vanishing quantum dimensions, providing the categorical setting for neglecton fusion.
 
 - **Observable signatures**: Establish measurable consequences, such as altered tunneling conductance, modified quasiparticle statistics, or entanglement-spectrum deviations.
 
