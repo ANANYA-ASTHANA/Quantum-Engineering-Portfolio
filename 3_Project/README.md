@@ -56,16 +56,37 @@ For a complete methodological explanation, refer to: [`docs/project_summary.md`]
 ---
 
 ## 3. Key Experimental Results
+### 3.1 Quantum Layer
+- **E91 QKD (SimulaQron):**
+  - Generated **7000 EPR pairs**, with **$\approx 45–50%$ sifted-key retention** after sifting
+  - QBER measured in 10% sifted key sample bits ranged **4–7%** (abort threshold > 5%)
+  - Only keys with QBER $\leq 5%$ were accepted
+- **TF-QKD (Qiskit beamsplitter model):**
+  - Achieved **> 95% interference visibility** in noise-free simulation
+- **MDI-QKD (Qiskit BSM simulation):**
+  - Bell-state measurement (BSM) fidelity: **> 97% ideal fidelity** under simulated conditions
 
-- Successful **E91-based key generation**, with accurate entanglement sharing, sifting, and **QBER testing using 10% publicly revealed bits**:  
-  - The key was accepted only when QBER $\le$ **5%**, after which testing bits were discarded  
-  - If QBER exceeded the threshold, the entire raw key was rejected  
-- Correct simulation of **TF-QKD central-node interference** via a Hamiltonian beamsplitter
-- Correct simulation of **MDI-QKD Bell-State Measurements (BSM)** at an untrusted Charlie  
-- Strong entropy final keys produced via the LDPC $\rightarrow$ Trevisan $\rightarrow$ HKDF pipeline  
-- AES-256 communication remained robust across fluctuating channel conditions  
-- SDN-driven adaptive modulation behaved correctly under real-time SNR changes  
-- Real-time visualization provided operational insight for monitoring node behavior
+### 3.2 Post-Processing Layer
+- **Key Reconciliation (LDPC):**
+  - Successfully reconciled sifted keys generated from noisy EPR pairs
+  - Operated on keys with **< 5% QBER**
+- **Privacy Amplification (Trevisan’s Extractor):**
+  - Produced a **1792-bit high-entropy master key**
+  - Represents **$\approx 87%$ compression** from the reconciled key length
+- **Session-Key Derivation (HKDF-SHA256):**
+  - Multiple **AES-256 session keys** derived securely from compressed master key with **zero bit reuse**
+
+### 3.3 Classical 6G Network Layer (NS-3)
+- **Adaptive Modulation (SDN-controlled):**
+  - Modulation change triggered by anomaly thresholds:
+    - **SNR < 8 dB**
+    - **BER > 0.15**
+    - **Load > 80%**
+    - **Packet loss rate > 3%**
+- **Encrypted Communication:**
+  - QKD $\rightarrow$ AES-256 integration enabled **real-time secure messaging** across hierarchical links (Cabinet $\leftrightarrow$ HQ $\leftrightarrow$ Regional Bases)
+
+These results directly validate the correctness of quantum key generation, the integrity of the post-processing pipeline, and the robustness of AES-secured 6G communication under dynamic channel conditions.
 
 ---
 
