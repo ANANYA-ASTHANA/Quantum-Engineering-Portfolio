@@ -84,10 +84,10 @@ MODULATION_SCHEMES = {
     11: {"mcs": 11, "modulation": "1024-QAM", "coding_rate": "5/6", "snr_threshold": 50},
 }
 
-# Function to determine the best modulation based on SNR, Load, and BER
+# Function to determine the best modulation based on SNR
 def select_modulation(snr):
     """
-    Selects an appropriate MCS index based on SNR, BER, and network load.
+    Selects an appropriate MCS index based on SNR
     """
     best_mcs = 0  # Default to lowest modulation (BPSK MCS-0)
 
