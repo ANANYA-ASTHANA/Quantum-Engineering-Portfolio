@@ -235,6 +235,7 @@ Modeling ensures that the architecture reflects realistic 6G deployment constrai
 - The hybrid QKD $\rightarrow$ AES-256 encryption pipeline sustained **real-time secure messaging** across the hierarchical military-grade network model (Cabinet $\leftrightarrow$ HQ $\leftrightarrow$ Regional Bases).
 - Threshold-based anomaly detection correctly identified unfavorable channel states requiring modulation fallback or retransmission.
 
+------ 
 
 These measured outputs confirm that the system achieves reliable quantum key generation, robust classical-layer adaptation, and operationally stable encrypted communication—consistent with mission-critical 6G requirements.
 
