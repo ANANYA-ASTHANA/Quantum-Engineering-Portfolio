@@ -58,9 +58,9 @@ For a complete methodological explanation, refer to: [`docs/project_summary.md`]
 ## 3. Key Experimental Results
 ### 3.1 Quantum Layer
 - **E91 QKD (SimulaQron):**
-  - Generated **7000 EPR pairs**, with **$\approx 45–50%$ sifted-key retention** after sifting
+  - Generated **7000 EPR pairs**, with **$\approx 45–50% $ sifted-key retention** after sifting
   - QBER measured in 10% sifted key sample bits ranged **4–7%** (abort threshold > 5%)
-  - Only keys with QBER $\leq 5%$ were accepted
+  - Only keys with QBER $\leq 5% $ were accepted
 - **TF-QKD (Qiskit beamsplitter model):**
   - Achieved **> 95% interference visibility** in noise-free simulation
 - **MDI-QKD (Qiskit BSM simulation):**
@@ -72,7 +72,7 @@ For a complete methodological explanation, refer to: [`docs/project_summary.md`]
   - Operated on keys with **< 5% QBER**
 - **Privacy Amplification (Trevisan’s Extractor):**
   - Produced a **1792-bit high-entropy master key**
-  - Represents **$\approx 87%$ compression** from the reconciled key length
+  - Represents **$\approx 87% $ compression** from the reconciled key length
 - **Session-Key Derivation (HKDF-SHA256):**
   - Multiple **AES-256 session keys** derived securely from compressed master key with **zero bit reuse**
 
