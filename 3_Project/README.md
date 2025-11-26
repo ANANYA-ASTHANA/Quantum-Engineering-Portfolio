@@ -77,8 +77,8 @@ For a complete methodological explanation, refer to: [`docs/project_summary.md`]
   - Multiple **AES-256 session keys** derived securely from compressed master key with **zero bit reuse**
 
 ### 3.3 Classical 6G Network Layer (NS-3)
-- **Adaptive Modulation (SDN-controlled):**
-  - Modulation change triggered by anomaly thresholds:
+- **Adaptive Modulation (SDN-controlled) and Anomaly Detection:**
+  - Modulation change triggered by SNR changes, anomaly indication based on following thresholds:
     - **SNR < 8 dB**
     - **BER > 0.15**
     - **Load > 80%**
