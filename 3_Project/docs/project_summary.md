@@ -189,7 +189,7 @@ Modeling ensures that the architecture reflects realistic 6G deployment constrai
 
 - Multi-layer node architecture  
 - SDN modulation control based on real-time SNR  
-- Anomaly detection  
+- Threshold-based anomaly detection (SNR, BER, Load, Packet Loss metrics) 
 - PyVis-based interactive network visualization  
 
 ---
