@@ -60,7 +60,7 @@ For a complete methodological explanation, refer to: [`docs/project_summary.md`]
 - **E91 QKD (SimulaQron):**
   - Generated **7000 EPR pairs**, with **$\approx 45–50$% sifted-key retention** after sifting
   - QBER measured in 10% sifted key sample bits ranged **4–7%** (abort threshold > 5%)
-  - Only keys with QBER $\leq 5\$% were accepted
+  - Only keys with QBER $\leq 5$% were accepted
 - **TF-QKD (Qiskit beamsplitter model):**
   - Achieved **> 95% interference visibility** in noise-free simulation
 - **MDI-QKD (Qiskit BSM simulation):**
@@ -69,7 +69,7 @@ For a complete methodological explanation, refer to: [`docs/project_summary.md`]
 ### 3.2 Post-Processing Layer
 - **Key Reconciliation (LDPC):**
   - Successfully reconciled sifted keys generated from noisy EPR pairs
-  - Operated on keys with **< 5% QBER**
+  - Operated on keys with **$\leq 5$% QBER**
 - **Privacy Amplification (Trevisan’s Extractor):**
   - Produced a **1792-bit high-entropy master key**
   - Represents **$\approx 87\$% compression** from the reconciled key length
