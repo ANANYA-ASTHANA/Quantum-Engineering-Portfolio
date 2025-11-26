@@ -197,9 +197,8 @@ Modeling ensures that the architecture reflects realistic 6G deployment constrai
 ### **5.5 Web Application**
 
 - MFA (Password + QKD-challenge) login  
-- Layer-restricted communication  
 - AES-256 encrypted messaging  
-- Real-time NS-3 visualization for admins  
+- Real-time network visualization for admins  
 - Session-key deletion after use (prevents key reuse)
 
 ---
@@ -291,7 +290,6 @@ These limitations stem from the scope of simulation-only work and can be extende
 - Develop PQC–QKD hybrid security  
 - Add RL-based adaptive SDN modulation control  
 - Integrate hardware-in-the-loop quantum modules  
-- Expand dynamic inter-layer routing  
 
 ---
 
