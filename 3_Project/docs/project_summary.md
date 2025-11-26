@@ -227,7 +227,7 @@ Modeling ensures that the architecture reflects realistic 6G deployment constrai
 
 ### **6.3 Classical Network (6G Simulation)**
 
-- The NS-3 6G-like channel, operating under THz/mmWave parameters, triggered SDN-driven modulation changes under quantifiable anomaly conditions:
+- The NS-3 6G-like channel, operating under THz/mmWave parameters, triggered SDN-driven modulation changes under dynamic SNR; network anomalies were detected through quantifiable conditions:
   - **SNR < 8 dB**
   - **BER > 0.15**
   - **Load > 80%**
