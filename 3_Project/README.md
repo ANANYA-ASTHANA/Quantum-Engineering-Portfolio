@@ -3,7 +3,7 @@
 
 This repository presents an end-to-end **quantum-secure 6G communication architecture**, integrating Quantum Key Distribution (QKD), classical key refinement, and AES-256–secured data transmission within an NS-3–simulated 6G network.
 
-The system is engineered for **mission-critical environments**, particularly **government and military communication networks**, where high-assurance confidentiality, integrity, and future security are required.
+The system is engineered for **mission-critical environments**, particularly **government and military communication networks**, where high-assurance confidentiality, integrity, and forward security are required.
 
 ---
 
