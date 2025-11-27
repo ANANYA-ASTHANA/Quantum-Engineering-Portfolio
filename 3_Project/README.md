@@ -72,7 +72,7 @@ For a complete methodological explanation, refer to: [`docs/project_summary.md`]
   - Operated on keys with **$\leq 5$% QBER**
 - **Privacy Amplification (Trevisan’s Extractor):**
   - Produced a **1792-bit high-entropy master key**
-  - Represents **$\approx 87\$% compression** from the reconciled key length
+  - Retains **$\approx 87\$%** of the reconciled key length
 - **Session-Key Derivation (HKDF-SHA256):**
   - Multiple **AES-256 session keys** derived securely from compressed master key with **zero bit reuse**
 
