@@ -1,5 +1,5 @@
 # Quantum Systems and Engineering Portfolio  
-**Author:** *Ananya Asthana* 
+*Ananya Asthana* 
 
 ---
 
