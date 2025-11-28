@@ -1,6 +1,5 @@
 # Quantum Systems and Engineering Portfolio  
 **Ananya Asthana**  
-*MSc. Quantum Science and Engineering*  
 
 ---
 
