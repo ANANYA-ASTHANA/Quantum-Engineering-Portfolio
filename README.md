@@ -46,6 +46,7 @@ Each entry synthesizes literature insights, identifies open challenges, and outl
 This portfolio represents a systematic progression from **foundational learning to applied research** in quantum systems engineering.  
 It emphasizes rigor, reproducibility, and conceptual clarity, aligning computational models with secure and scalable architectures.  
 Collectively, the works establish a framework for integrating quantum computation, communication, and cryptography within unified system design.
+These works are analyzed in the context of realistic noise models, connectivity limits, and the coordination requirements of hybrid quantum–classical systems, reflecting an execution-aware perspective aligned with practical NISQ-era constraints.
 
 ---
 
