@@ -7,6 +7,7 @@
 This repository documents a structured body of work uniting **quantum computing**, **quantum communication**, and **hybrid cryptographic engineering**.  
 It integrates simulation, algorithmic modeling, and analytical investigation, presenting a progression from theoretical principles to reproducible implementations.  
 The collection emphasizes system design, measurement accuracy, and cross-disciplinary synthesis between classical computation and quantum technologies.
+This portfolio reflects a research-driven, execution-aware approach to quantum systems, focusing on architectures, noise models, and hybrid quantum–classical coordination principles relevant to scalable quantum technologies.
 
 ---
 
