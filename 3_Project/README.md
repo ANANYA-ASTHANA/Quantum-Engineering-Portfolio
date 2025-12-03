@@ -73,8 +73,8 @@ For a complete methodological explanation, refer to: [`docs/project_summary.md`]
 - **Privacy Amplification (Trevisan’s Extractor):**
   - Produced a **1792-bit high-entropy master key**
   - Retains **$\approx 87\$%** of the reconciled key length
-- **Session-Key Derivation (HKDF-SHA256):**
-  - Multiple **AES-256 session keys** derived securely from compressed master key with **zero bit reuse**
+- **Session-Key Derivation (HKDF-SHA256/Trevisan's Extractor):**
+  - Multiple **AES-256 session keys** derived securely from compressed master key using either method
 
 ### 3.3 Classical 6G Network Layer (NS-3)
 - **Adaptive Modulation (SDN-controlled) and Anomaly Detection:**
