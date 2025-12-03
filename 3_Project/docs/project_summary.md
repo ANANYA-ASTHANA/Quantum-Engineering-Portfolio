@@ -220,7 +220,7 @@ Modeling ensures that the architecture reflects realistic 6G deployment constrai
 
 - **LDPC-based key reconciliation** successfully reconciled sifted keys with **$\leq 5$% QBER**, enabling both parties to obtain identical raw keys.
 - **Trevisan-based privacy amplification** condensed the reconciled key into a **1792-bit master key**, giving a retention factor of **$\approx 0.87$** while maintaining high min-entropy.
-- **HKDF-SHA256** derived **multiple AES-256 session keys** from the master key with **zero bit reuse**, ensuring cryptographically strong per-session confidentiality.
+- **Trevisan-based key derivation** produced **disjoint AES-256 session keys** from the compressed master key, ensuring **no reuse of key material**, while **HKDF-SHA256** expanded the same master key into multiple cryptographically independent AES-256 session keys for strong per-session confidentiality.
 
 ---
 
