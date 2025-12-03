@@ -63,7 +63,7 @@ The bridge manages:
 - Raw key transfer (ZeroMQ REQ–REP)  
 - LDPC-based key reconciliation (pyLDPC) [6]
 - Privacy amplification (Trevisan’s extractor) for master-key compression [7]
-- AES session-key derivation via Trevisan's extractor (double usage)/HKDF-SHA256 (efficient KDF alternative to Trevisan) [8]
+- AES-256 session-key derivation via Trevisan's extractor (double usage)/HKDF-SHA256 (efficient KDF alternative to Trevisan) [8]
 - Secure (session) key propagation to backend communication layers  
 
 Together, this creates an end-to-end secure pipeline from quantum measurement $\rightarrow$ key derivation $\rightarrow$ encrypted classical transmission.
