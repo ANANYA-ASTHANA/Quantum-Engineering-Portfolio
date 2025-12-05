@@ -1,29 +1,29 @@
 # Quantum Network Security
 
 ## Background & Motivation
-The accelerating progress of quantum computing threatens the foundational security of classical cryptographic systems. Quantum algorithms like **Shor’s** demonstrate the theorectical possibility of solving the **integer factorization** and **discrete logarithms** problems in polynomial time, breaking the security of widely deployed asymmetric encryption schemes such as **RSA** and **Elliptic Curve Cryptography (ECC)** [1] — both critical to internet security, digital signatures, and secure web transactions. If realized at scale, quantum adversaries could decrypt confidential communication, forge transactions, and compromise global data integrity.
+The accelerating progress of quantum computing threatens the foundational security of classical cryptographic systems. Quantum algorithms like **Shor’s** demonstrate the theorectical possibility of solving the **integer factorization** and **discrete logarithms** problems in polynomial time, breaking the security of widely deployed asymmetric encryption schemes such as **RSA** and **Elliptic Curve Cryptography (ECC)** [1]—both critical to internet security, digital signatures, and secure web transactions. If realized at scale, quantum adversaries could decrypt confidential communication, forge transactions, and compromise global data integrity.
 
-Meanwhile, emerging demands in classical networking — such as 6G networks, distributed IoT systems, and cloud-scale applications — require resilient, scalable security architectures. Quantum-secure communication design is becoming essential to future-proof these infrastructures.
+Meanwhile, emerging demands in classical networking—such as 6G networks, distributed IoT systems, and cloud-scale applications—require resilient, scalable security architectures. Quantum-secure communication design is becoming essential to future-proof these infrastructures.
 
 ---
 
 ## Theoretical Foundations
-### 1. Quantum Cryptography and Quantum-Resistant Architectures
+### Quantum Cryptography and Quantum-Resistant Architectures
 Quantum-safe cryptography can be classified into two complementary paradigms:
 - **Quantum Cryptography**, primarily **Quantum Key Distribution (QKD)**, which provides information-theoretic key security based on the laws of quantum mechanics [2].
 - **Post-Quantum Cryptography (PQC)**, composed of mathematically complex problems resistant to quantum algorithms, e.g., lattice- and hash-based constructions; practical for classical network deployment and suited for large-scale operations requiring digital signatures and encrypted transport protocols [3].
 
 A viable architecture for the quantum era must integrate both, matching cryptographic mechanisms to system requirements such as scalability, confidentiality, latency, and hardware availability.
 
-### 2. QKD Protocol Suitability Across Network Contexts
+### QKD Protocol Suitability Across Network Contexts
 Different QKD protocols are optimal for different architectural and operational contexts:
-- **E91 Protocol:** Based on entanglement and Bell inequality violation, E91 provides the strongest form of key exchange security when deployed in sensitive endpoints [4] — ideal for high-security, point-to-point links (e.g., between control centers and trusted nodes).
-- **Twin-Field QKD (TF-QKD):** Recognized for breaking the repeaterless rate-loss bound, enabling ultra-long-distance secure key distribution without trusted repeaters [5] — ideal for large-scale, intercontinental or backbone network scenarios.
+- **E91 Protocol:** Based on entanglement and Bell inequality violation, E91 provides the strongest form of key exchange security when deployed in sensitive endpoints [4]—ideal for high-security, point-to-point links (e.g., between control centers and trusted nodes).
+- **Twin-Field QKD (TF-QKD):** Recognized for breaking the repeaterless rate-loss bound, enabling ultra-long-distance secure key distribution without trusted repeaters [5]—ideal for large-scale, intercontinental or backbone network scenarios.
 - **Measurement-Device Independent QKD (MDI-QKD):** Mitigates detector-based side-channel attacks by outsourcing measurement to a potentially untrusted relay [6]. Suitable for densely connected networks with multiple quantum nodes and high attack surface exposure.
 
 These protocols can be strategically deployed based on infrastructure characteristics, key generation distance requirements, and hardware trust levels.
 
-### 3. A Hybrid Quantum-Classical Framework 
+### A Hybrid Quantum-Classical Framework 
 Integrating QKD into classical networks using hybrid cryptographic schemes leverages the best of both worlds: quantum-proof key generation and classical encryption efficiency. This approach supports:
 - **Minimal changes to current infrastructure:** Keeping legacy systems operational while incrementally adding quantum-safe features.
 - **Scalability and reliability:** QKD systems can be layered over existing routing and communication devices without disrupting service.
@@ -31,14 +31,14 @@ Integrating QKD into classical networks using hybrid cryptographic schemes lever
 
 Moreover, hybrid schemes complement classical cryptographic primitives such as TLS and IPsec, providing pathways to future-proof existing protocols rather than replacing them entirely.
 
-### 4. QKD Compatibility with Symmetric Encryption
+### QKD Compatibility with Symmetric Encryption
 QKD produces random, high-entropy keys whose secure transmission is guaranteed. Symmetric encryption schemes, such as **AES-256**, are recommended for subsequent data encryption for the following:
 - They support **real-time encryption of large volumes of data**, essential in high-throughput networks.
-- Once secured by quantum-proof keys, AES-256 becomes highly resistant to quantum attacks. Although **Grover’s algorithm** theoretically reduces AES-256 security from 256-bit to 128-bit strength [7], even a quantum computer with this capability would require approximately **$10^{12}$ years** to brute-force the key — a practically impossible timescale.
+- Once secured by quantum-proof keys, AES-256 becomes highly resistant to quantum attacks. Although **Grover’s algorithm** theoretically reduces AES-256 security from 256-bit to 128-bit strength [7], even a quantum computer with this capability would require approximately **$10^{12}$ years** to brute-force the key—a practically impossible timescale.
 
 This makes AES-256 a robust, practical, and future-resilient choice in hybrid quantum-classical encryption systems.
 
-### 5. Integration with Classical Network Architectures
+### Integration with Classical Network Architectures
 Implementing QKD within existing classical networks requires:
 - **Hybrid Security Stacks**, where keys generated by QKD are used with symmetric encryption (e.g., AES-256) for real payload encryption. Proper post-processing (Key Reconciliation, Privacy Amplification) is essential to convert raw keys into usable cryptographic material.
 - **Secure Classical Channels**, especially during post-processing and session key derivation, where authenticated classical communication must persist alongside quantum operations.
@@ -54,7 +54,7 @@ A complete quantum-secure architecture must be layered, adaptable, and operation
 - **Telecommunication backbones**, with large-scale, geographically distributed communication, can deploy **PQC-based schemes (e.g., lattice-based KEMs)** to secure public interfaces without major changes to routing infrastructure.
 - **IoT and edge networks**, whose resource constraints limit the feasibility of QKD deployment, can use lightweight **Quantum Random Number Generators (QRNG)-based truly random key generation** [8] to enhance classical cryptographic mechanisms without expensive hardware overhauls.
 
-This tiered approach enables appropriateness — where each network type receives the highest security guarantees that align with its operational scale, latency, and threat profile.
+This tiered approach enables appropriateness—where each network type receives the highest security guarantees that align with its operational scale, latency, and threat profile.
 
 ---
 
