@@ -22,7 +22,7 @@ def hkdf_sha3(raw_key, salt, info, length, num_keys):
 raw_key = secrets.token_bytes(128)  # Example raw key (128 bytes)
 salt = secrets.token_bytes(16)      # Example salt (16 bytes)
 info = b"session_info"              # Additional context info
-num_keys = 5                         # Number of session keys to derive
+num_keys = 5                         # Number of session keys to derive (configurable)
 session_keys = hkdf_sha3(raw_key, salt, info, 32, num_keys)  # Each 256-bit key
 
 for i, key in enumerate(session_keys):
