@@ -26,4 +26,4 @@ num_keys = 5                         # Number of session keys to derive (configu
 session_keys = hkdf_sha3(raw_key, salt, info, 32, num_keys)  # Each 256-bit key
 
 for i, key in enumerate(session_keys):
-    print(f"Session Key {i+1}: {''.join(format(byte, '08b') for byte in key)}")
+    print(f"Session Key {i+1}: {''.join(format(byte, '08b') for byte in key)}")  # Convert bytes to bits
