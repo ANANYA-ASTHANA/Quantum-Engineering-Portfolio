@@ -19,11 +19,15 @@ def bob_e91(num_bits=7000):
             if basis == 1:
                 q.H()  # X-basis
             elif basis == 2:
-                q.H()   # Y-basis 
-                q.Y()       # Y gate   
-
+                q.K()  # Y-basis 
+                
             # Measure the qubit
-            raw_key_bits.append(q.measure())
+            qb = q.measure()
+            # Fix up bit depending on basis and entangled state
+            if basis == 2:   # Y-basis
+            # For |Phi+>, Y outcomes are anti-correlated ⇒ flip Bob's bit
+                qb ^= 1     # qb = qb ^ 1
+            raw_key_bits.append(qb)
             #print("Qubit measured!")
             #q.release()
             # Send basis choice to Alice
