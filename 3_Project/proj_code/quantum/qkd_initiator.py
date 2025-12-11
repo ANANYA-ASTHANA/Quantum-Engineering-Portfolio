@@ -62,22 +62,20 @@ def determine_qkd_protocol(username):
     return protocol
 
 def tf_qkd(my_node, target_node):
-    print(f"\n🔄 Establishing TF-QKD between {my_node} and {target_node}...")
     print("📡 Sending weak coherent pulses through an untrusted relay...")
     user_process = subprocess.Popen(["python3", "TF_QKD.py"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     output, error = user_process.communicate()
     print("OUTPUT:", output)
     print("ERROR:", error)
-    print(f"✅ Secure key established between {my_node} and {target_node} via TF-QKD.")
+    print(f"✅ Successful interference via TF-QKD.")
      
 def mdi_qkd(my_node, target_node):
-    print(f"\n🔄 Establishing MDI-QKD between {my_node} and {target_node}...")
-    print("📡 Alice and Bob send qubits to an untrusted relay for Bell-state measurement...")
+    print("📡 Sending qubits to an untrusted relay for Bell-state measurement...")
     user_process = subprocess.Popen(["python3", "MDI_QKD.py"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     output, error = user_process.communicate()
     print("OUTPUT:", output)
     print("ERROR:", error)
-    print(f"✅ Secure key established between {my_node} and {target_node} via MDI-QKD.")
+    print(f"✅ Successful BSM via MDI-QKD.")
 
 def initiate_qkd_session(user, protocol):
     """Chooses the correct QKD protocol and initiates the session."""
