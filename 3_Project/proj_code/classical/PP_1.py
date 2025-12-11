@@ -117,7 +117,7 @@ def alice_main():
     #raw_key = np.random.randint(0, 2, k)  # Example raw key for demo purpose
     message = start_zmq_server()
     bit_array = np.array(json.loads(message), dtype=np.uint8)
-    raw_key = bit_array[:2051]
+    raw_key = bit_array[:2051]  # Select 2051 bits of the sifted key
     encoded_key = pyldpc.encode(G, raw_key, snr = 10, seed = 42)
     encoded_key_bytes = encoded_key.astype(np.float64).tobytes()
     # A mutually agreed upon pre-shared key (confidential between the two parties)
@@ -186,7 +186,7 @@ def alice_main():
     for idx, key in enumerate(session_keys, start=1):
         print(f"Session Key {idx}: {key}")
 
-    #Store the session keys for data encryption in the classical channel
+    # Store the session keys for data encryption in the classical channel
     write_session_keys_to_file(session_keys)
     print(f"Session keys successfully written.")
 
