@@ -31,8 +31,7 @@ def alice_e91(num_bits=7000):
             if basis == 1:
                 q.H()  # X-basis
             elif basis == 2:
-                q.H()  
-                q.Y()  # Y-basis
+                q.K()  # Y-basis
 
             # Measure the qubit
             raw_key_bits.append(q.measure())
