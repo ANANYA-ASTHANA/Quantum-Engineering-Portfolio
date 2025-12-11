@@ -1,4 +1,4 @@
-### NS-3 Compatible Key Reconciliation with LDPC (BP-based Decoding), PA and KDF with Trevisan's Extractor
+### NS-3 Compatible Key Reconciliation with LDPC (BP-based Decoding), PA and KDF 
 
 #### **Alice's KR, PA and KDF Processes (PP_1.py)**
 
