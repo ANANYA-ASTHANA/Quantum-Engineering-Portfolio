@@ -167,7 +167,7 @@ def bob_main():
     # Dual KDF Path for session-key generation
     final_keys = KDF(final_bits, True)
     
-    # Split derived key into 256-bits session keys
+    # Split derived key into 256-bit session keys
     session_keys = split_into_session_keys(final_keys)
 
     # Print each session key (for validation in demo only)
