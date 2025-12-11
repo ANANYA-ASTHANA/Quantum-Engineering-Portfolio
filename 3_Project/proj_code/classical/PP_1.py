@@ -14,6 +14,7 @@ import os
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes # For data encryption
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC 
 from cryptography.hazmat.primitives import hashes
+import HKDF_SHA
 import zmq
 
 def generate_ldpc_matrices(n, d_v, d_c):
@@ -74,12 +75,36 @@ def split_into_session_keys(final_key, session_key_size=256):
     
     return session_keys
 
-def write_session_keys_to_file(session_keys, filename="scratch/session_keys.py"):
+def write_session_keys_to_file(session_keys, filename="session_keys.py"):
     with open(filename, "w") as f:
         f.write("session_keys = [\n")
         for key in session_keys:
             f.write(f"    {key.tolist()},\n")  # Convert NumPy array to a list
         f.write("]\n")
+
+def KDF(master_key, switch=False):
+    if switch==True:
+        session_keys = HKDF_SHA.hkdf_sha3(master_key, 12)
+        # Concatenate into a single 1-D vector
+        session_vec = np.concatenate(session_keys).astype(int)
+    else:
+        # Double usage of Trevisan's extractor (for KDF)
+        ext_KDF = Trevisan(len(master_key), len(master_key), 0.01)
+
+        # Generate the seed length dynamically for KDF
+        seed_length_KDF = ext_KDF.ext.get_seed_length()
+
+        # Generate `seed_bits_KDF` from PA output using SHAKE-256
+        shake_kdf = hashes.Hash(hashes.SHAKE256(seed_length_KDF // 8))
+        shake_kdf.update(master_key.tobytes())
+        seed_bits_KDF = list(bin(int.from_bytes(shake_kdf.finalize(), "big"))[2:].zfill(seed_length_KDF))
+        seed_bits_KDF = [int(bit) for bit in seed_bits_KDF]
+
+        # Perform KDF using Trevisan
+        kdf_output = ext_KDF.extract(master_key, seed_bits_KDF)
+        session_vec = np.array(kdf_output).astype(int)
+
+    return session_vec
 
 def alice_main():
     n = 4096  # Code length
@@ -89,7 +114,7 @@ def alice_main():
     # Generate H and G matrices and encode key using G matrix
     H, G = generate_ldpc_matrices(n, d_v, d_c)
     k = G.shape[1]  # Extracting correct message length 
-    #raw_key = np.random.randint(0, 2, k)
+    #raw_key = np.random.randint(0, 2, k)  # Example raw key for demo purpose
     message = start_zmq_server()
     bit_array = np.array(json.loads(message), dtype=np.uint8)
     raw_key = bit_array[:2051]
@@ -116,16 +141,8 @@ def alice_main():
     "tag_H": tag_H,
     "tag_encoded_key": tag_encoded_key}
     send_data(data_to_send, "127.0.0.1", 8080)  # Bob's IP in NS-3
-    """print(type(H))
-    print(H)
-    print(type(encoded_key))"""
     print("Alice's Original Encoded Key:", encoded_key)
-    """print(type(iv_H))
-    print(type(iv_encoded_key))
-    print(type(ciphertext_H))
-    print(type(ciphertext_encoded_key))
-    print(type(tag_H))
-    print(type(tag_encoded_key))"""
+    
     # Wait for Bob's confirmation after decoding
     print("Proceeding to receive confirmation...")
     udp_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -133,11 +150,10 @@ def alice_main():
     print("Successfully bound to port!")
     confirmation, _ = udp_socket.recvfrom(1024)
     print("Alice: Received confirmation from Bob -", confirmation.decode())
-    print(f"Original Key: {raw_key}, Length: {len(raw_key)}")
-
+    
 
     # Implement PA using Trevisan's Extractor
-    ext = Trevisan(k, 2051, 0.01) # Initializing Trevisan's extractor with input length k and extractor error capped at 1% 
+    ext = Trevisan(k, 1974, 0.01) # Initializing Trevisan's extractor with input length k and extractor error capped at 1% 
     seed_bits = [randint(0, 1) for _ in range(ext.ext.get_seed_length())] # Seed of length calculated from Trevisan's initializer
 
     # Convert seed_bits to bytes for encryption
@@ -158,29 +174,15 @@ def alice_main():
     # Generating Final Master Key
     output_bits = ext.extract(raw_key, seed_bits) # Extract a compressed key from Original key (using seed)
     final_bits = np.array(output_bits).astype(int)
-    print("Compressed Key:", final_bits, "Length:", len(final_bits))
+    print("Compressed Key Length:", len(final_bits))
 
-    # Double usage of Trevisan's extractor (for KDF)
-    ext_KDF = Trevisan(len(final_bits), len(final_bits), 0.01)
+    # Dual KDF Path for session-key generation
+    final_keys = KDF(final_bits, True)
 
-    # Generate the seed length dynamically for KDF
-    seed_length_KDF = ext_KDF.ext.get_seed_length()
+    # Split derived key into 256-bit session keys
+    session_keys = split_into_session_keys(final_keys)
 
-    # Generate `seed_bits_KDF` from PA output using SHAKE-256
-    shake_kdf = hashes.Hash(hashes.SHAKE256(seed_length_KDF // 8))
-    shake_kdf.update(final_bits.tobytes())
-    seed_bits_KDF = list(bin(int.from_bytes(shake_kdf.finalize(), "big"))[2:].zfill(seed_length_KDF))
-    seed_bits_KDF = [int(bit) for bit in seed_bits_KDF]
-
-    # Perform KDF using Trevisan
-    kdf_output = ext_KDF.extract(final_bits, seed_bits_KDF)
-    kdf_keys = np.array(kdf_output).astype(int)
-    print("Session Key(s):", kdf_keys, "Length:", len(kdf_keys))
-
-    # Split derived key into 256-bits session keys
-    session_keys = split_into_session_keys(kdf_keys)
-
-    # Print each session key
+    # Print each session key (for validation in demo only)
     for idx, key in enumerate(session_keys, start=1):
         print(f"Session Key {idx}: {key}")
 
