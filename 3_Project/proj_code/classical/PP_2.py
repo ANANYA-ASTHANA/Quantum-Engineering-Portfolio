@@ -10,6 +10,7 @@ import os
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes # For data encryption
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC 
 from cryptography.hazmat.primitives import hashes
+import HKDF_SHA 
 
 def receive_large_data(ip, port):
     udp_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -71,37 +72,55 @@ def split_into_session_keys(final_key, session_key_size=256):
     
     return session_keys
 
+def KDF(master_key, switch=False):
+    if switch==True:
+        session_keys = HKDF_SHA.hkdf_sha3(master_key, 12)
+        # Concatenate into a single 1-D vector
+        session_vec = np.concatenate(session_keys).astype(int)
+        
+    else:
+        # Double usage of Trevisan's extractor (for KDF)
+        ext_KDF = Trevisan(len(master_key), len(master_key), 0.01)
+
+        # Generate the seed length dynamically for KDF
+        seed_length_KDF = ext_KDF.ext.get_seed_length()
+
+        # Generate `seed_bits_KDF` from PA output using SHAKE-256
+        shake_kdf = hashes.Hash(hashes.SHAKE256(seed_length_KDF // 8))
+        shake_kdf.update(master_key.tobytes())
+        seed_bits_KDF = list(bin(int.from_bytes(shake_kdf.finalize(), "big"))[2:].zfill(seed_length_KDF))
+        seed_bits_KDF = [int(bit) for bit in seed_bits_KDF]
+
+        # Perform KDF using Trevisan
+        kdf_output = ext_KDF.extract(master_key, seed_bits_KDF)
+        session_vec = np.array(kdf_output).astype(int)
+
+    return session_vec
+
 def bob_main():
     pre_shared_key = b"secure_qkd_key"
     
     # Ensure the key is of valid size for AES (e.g., 256 bits for AES-256)
     aes_key = derive_key(pre_shared_key)
-    print(aes_key)
+    
     # Receive Data from Alice
     data_received = receive_large_data("127.0.0.1", 8080)
     print("Proceeding to extracting every data received...")
     iv_H_from_alice = data_received["iv_H"] # Received IV for H
-    #print(type(iv_H_from_alice))
     iv_encoded_key_from_alice = data_received["iv_encoded_key"]  # Received IV for the encoded key
-    #print(type(iv_encoded_key_from_alice))
     ciphertext_H_from_alice = data_received["ciphertext_H"]  # Received ciphertext for H
-    #print(type(ciphertext_H_from_alice))
     ciphertext_encoded_key_from_alice = data_received["ciphertext_encoded_key"] # Received ciphertext for the encoded key
-    #print(type(ciphertext_encoded_key_from_alice))
     tag_H_from_alice = data_received["tag_H"]  # Received tag for H
-    #print(type(tag_H_from_alice))
     tag_encoded_key_from_alice = data_received["tag_encoded_key"]  # Received tag for the encoded key
-    #print(type(tag_encoded_key_from_alice))
     
 
     try:
         print("Decrypting and verifying H matrix...")
         decrypted_H = np.frombuffer(decrypt_data(iv_H_from_alice, ciphertext_H_from_alice, tag_H_from_alice, aes_key), dtype=np.int64).reshape(2048, 4096)
-        #print(type(decrypted_H))
-        #print(decrypted_H)
+        
         print("Decrypting and verifying encoded key...")
         decrypted_encoded_key = np.frombuffer(decrypt_data(iv_encoded_key_from_alice, ciphertext_encoded_key_from_alice, tag_encoded_key_from_alice, aes_key), dtype=np.float64)
-        #print(type(decrypted_encoded_key))
+       
         print("Bob's Recovered Encoded Key:", decrypted_encoded_key)
         print("Decryption successful!")
     
@@ -109,9 +128,8 @@ def bob_main():
         print("Error:", e)
 
     # Apply BP-based error correction
-    #print(decrypted_H.shape)
     decoded_key = pyldpc.decode(decrypted_H, decrypted_encoded_key, snr = 10, maxiter = 2000)
-    final_decoded_key = decoded_key[:2051]
+    final_decoded_key = decoded_key[:2051]  # Select 2051 bits of the decoded reconciled key
     print("Bob: Successfully decoded key.")
       
     # Send confirmation to Alice
@@ -120,10 +138,10 @@ def bob_main():
     print("Bob: Sent confirmation to Alice.")
     
     udp_socket.close()
-    print(f"Reconciled Key: {final_decoded_key}, Length: {len(final_decoded_key)}")
+    print(f"Reconciled Key Length: {len(final_decoded_key)}")
 
     # Implement PA using Trevisan's Extractor
-    ext = Trevisan(len(final_decoded_key), 2051, 0.01) # Initializing Trevisan's extractor with input length k and extractor error capped at 1% 
+    ext = Trevisan(len(final_decoded_key), 1974, 0.01) # Initializing Trevisan's extractor with input length k and extractor error capped at 1% 
 
     # Receive encrypted seed from Alice
     seed_data_received = receive_small_data("127.0.0.1", 8080)
@@ -144,29 +162,15 @@ def bob_main():
     # Use decrypted seed bits in PA
     output_bits = ext.extract(final_decoded_key, decrypted_seed_bits)
     final_bits = np.array(output_bits).astype(int)
-    print("Compressed Key:", final_bits, "Length:", len(final_bits))
+    print("Compressed Key Length:", len(final_bits))
 
-    # Double usage of Trevisan's extractor (for KDF)
-    ext_KDF = Trevisan(len(final_bits), len(final_bits), 0.01)
-
-    # Generate the seed length dynamically for KDF
-    seed_length_KDF = ext_KDF.ext.get_seed_length()
-
-    # Generate `seed_bits_KDF` from PA output using SHAKE-256
-    shake_kdf = hashes.Hash(hashes.SHAKE256(seed_length_KDF // 8))
-    shake_kdf.update(final_bits.tobytes())
-    seed_bits_KDF = list(bin(int.from_bytes(shake_kdf.finalize(), "big"))[2:].zfill(seed_length_KDF))
-    seed_bits_KDF = [int(bit) for bit in seed_bits_KDF]
-
-    # Perform KDF using Trevisan
-    kdf_output = ext_KDF.extract(final_bits, seed_bits_KDF)
-    kdf_keys = np.array(kdf_output).astype(int)
-    print("Session Key(s):", kdf_keys, "Length:", len(kdf_keys))
-
+    # Dual KDF Path for session-key generation
+    final_keys = KDF(final_bits, True)
+    
     # Split derived key into 256-bits session keys
-    session_keys = split_into_session_keys(kdf_keys)
+    session_keys = split_into_session_keys(final_keys)
 
-    # Print each session key
+    # Print each session key (for validation in demo only)
     for idx, key in enumerate(session_keys, start=1):
         print(f"Session Key {idx}: {key}")
     
