@@ -15,6 +15,6 @@ def compute_min_entropy(keys):
     return H_min
 
 # Example: If your keys are stored in a list as binary arrays
-keys = np.random.randint(0, 2, (1000000, 2051))  # Simulating 1000000 keys of 515 bits each
+keys = np.random.randint(0, 2, (1000000, 2051))  # Simulating 1000000 keys of 2051 bits each
 min_entropy = compute_min_entropy(keys)
 print(f"Min-Entropy: {min_entropy} bits")
