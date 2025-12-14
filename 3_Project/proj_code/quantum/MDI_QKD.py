@@ -25,7 +25,7 @@ def simulate_bsm(alice_state, bob_state):
         print(f"Outcome {outcome}: {prob:.4f}")
 
     # Simulate a single measurement outcome based on probabilities
-    outcome = random.choices(list(probs.keys()), weights=probs.values(), k=1)[0]
+    outcome = random.choices(list(probs.keys()), weights=list(probs.values()), k=1)[0]
     print(f"\nCharlie's measured outcome (simulated): {outcome}")
     return outcome
 
