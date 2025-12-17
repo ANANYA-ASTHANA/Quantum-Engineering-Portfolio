@@ -3,7 +3,7 @@ import numpy as np
 
 def compute_min_entropy(keys):
     """Computes min-entropy based on the most likely full key sequence."""
-    key_counts = Counter(map(tuple, keys))  # Count unique 515-bit sequences
+    key_counts = Counter(map(tuple, keys))  # Count unique key sequences
     total_keys = len(keys)
     
     # Find the probability of the most common sequence
