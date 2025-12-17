@@ -1,7 +1,7 @@
 # Future-Proofing 6G Networks: A Quantum Approach
 **Author:** *Ananya Asthana*
 
-This repository presents an end-to-end **quantum-secure 6G communication architecture**, integrating Quantum Key Distribution (QKD), classical key refinement, and AES-256–secured data transmission within an NS-3–simulated 6G network.
+This repository presents an end-to-end **quantum-secure 6G communication architecture**, integrating Quantum Key Distribution (QKD), classical key refinement, and AES-256-secured data transmission within an NS-3-simulated 6G network.
 
 The system is engineered for **mission-critical environments**, particularly **government and military communication networks**, where high-assurance confidentiality, integrity, and forward security are required.
 
@@ -42,14 +42,14 @@ The system consists of four integrated layers:
 ### **Classical Network Layer**
 - **NS-3 (≥3.43)** simulation of a 6G environment using mmWave/THz models  
 - **SDN-driven adaptive modulation** (PSK $\leftrightarrow$ QAM based on real-time SNR)  
-- AES-256–encrypted communication using quantum-derived keys  
+- AES-256-encrypted communication using quantum-derived keys  
 
 ### **User Interface Layer**
 - Flask-based **web portal** with **Multi-Factor Authentication (MFA)**  
 - Encrypted communication channels between authenticated users  
 - Administrator dashboard providing **real-time network visualization**  
 
-Across all layers, the architecture is designed for **high assurance**, **access control**, and **operational robustness**, reflecting the stringent requirements of **mission-critical government–military networks**.
+Across all layers, the architecture is designed for **high assurance**, **access control**, and **operational robustness**, reflecting the stringent requirements of **mission-critical government-military networks**.
 
 For a complete methodological explanation, refer to: [`docs/project_summary.md`](docs/project_summary.md)
 
@@ -96,7 +96,7 @@ These results directly validate the correctness of quantum key generation, the i
 - High-integrity post-processing (LDPC-based key reconciliation, Trevisan's extractor, HKDF)  
 - Realistic encrypted 6G communication using quantum-derived AES-256 session keys  
 - Engineering of SDN control, hierarchical subnets, anomaly indicators, and access restrictions 
-- Architecture designed specifically for **gov–military mission-critical communications**  
+- Architecture designed specifically for **gov-military mission-critical communications**  
 
 ---
 
