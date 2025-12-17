@@ -137,7 +137,7 @@ Modeling ensures that the architecture reflects realistic 6G deployment constrai
 - Random basis selection (Z/X/Y)  
 - Entangled pair measurement  
 - Bases reconciliation (sifting)
-- 10% sifted-ky sampling for QBER estimation  
+- 10% sifted-key sampling for QBER estimation  
 - QBER ≤ 5% $\rightarrow$ key accepted (with sample bits removed), else entire key discarded  
 
 #### **TF-QKD (Qiskit)**
