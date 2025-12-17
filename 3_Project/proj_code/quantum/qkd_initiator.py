@@ -62,7 +62,7 @@ def determine_qkd_protocol(username):
     return protocol
 
 def tf_qkd(my_node, target_node):
-    print("📡 Sending weak coherent pulses through an untrusted relay...")
+    print("📡 Sending phase-differed input states to a central node for phase-dependent interference...")
     user_process = subprocess.Popen(["python3", "TF_QKD.py"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     output, error = user_process.communicate()
     print("OUTPUT:", output)
