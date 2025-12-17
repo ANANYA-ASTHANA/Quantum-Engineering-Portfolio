@@ -341,7 +341,7 @@ def handle_connect():
     if 'node_id' in session:  # Ensure session has a valid node_id
         node_id = session['node_id']
         node_socket_mapping[node_id] = request.sid  # Map node_id to socket_id
-        join_room(node_id)  # No more error here!
+        join_room(node_id)  
         print(f"[CONNECT] Node {node_id} joined room {node_id}")
         print(f"Node {node_id} connected with socket_id {request.sid}")
     else:
