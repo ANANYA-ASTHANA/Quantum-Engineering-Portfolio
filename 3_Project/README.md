@@ -58,13 +58,13 @@ For a complete methodological explanation, refer to: [`docs/project_summary.md`]
 ## 3. Key Experimental Results
 ### 3.1 Quantum Layer
 - **E91 QKD (SimulaQron):**
-  - Generated **7000 EPR pairs**, with **$\approx 45–50$% sifted-key retention** after sifting
+  - Generated **7000 EPR pairs**, with **$\approx 45–50$% sifted-key retention** after sifting (ideal)
   - QBER measured in 10% sifted key sample bits ranged **4–7%** (abort threshold > 5%)
   - Only keys with QBER $\leq 5$% were accepted
 - **TF-QKD (Qiskit beamsplitter model):**
-  - Achieved **> 95% interference visibility** in noise-free simulation
+  - Successfully reproduced central-node interference behavior under idealized simulation assumptions, validating correct twin-field architecture logic.
 - **MDI-QKD (Qiskit BSM simulation):**
-  - Bell-state measurement (BSM) fidelity: **> 97% ideal fidelity** under simulated conditions
+  - Bell-state measurement outcomes were correctly inferred in an untrusted-relay configuration, confirming protocol correctness of the MDI-QKD model.
 
 ### 3.2 Post-Processing Layer
 - **Key Reconciliation (LDPC):**
