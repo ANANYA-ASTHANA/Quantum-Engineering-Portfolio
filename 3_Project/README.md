@@ -37,7 +37,7 @@ The system consists of four integrated layers:
 ### **Post-Processing Layer**
 - **LDPC-based key reconciliation**  
 - **Trevisan’s extractor** for privacy amplification and session key derivation
-- **HKDF-SHA256** to derive high-entropy AES-256 session keys (efficient alternative to Trevisan for KDF) 
+- **HKDF-SHA3-256** to derive high-entropy AES-256 session keys (efficient alternative to Trevisan for KDF) 
 
 ### **Classical Network Layer**
 - **NS-3 (≥3.43)** simulation of a 6G environment using mmWave/THz models  
@@ -73,7 +73,7 @@ For a complete methodological explanation, refer to: [`docs/project_summary.md`]
 - **Privacy Amplification (Trevisan’s Extractor):**
   - Produced a **1792-bit high-entropy master key**
   - Retains **$\approx 87\$%** of the reconciled key length
-- **Session-Key Derivation (HKDF-SHA256/Trevisan's Extractor):**
+- **Session-Key Derivation (HKDF-SHA3-256/Trevisan's Extractor):**
   - Multiple **AES-256 session keys** derived securely from compressed master key using either method
 
 ### 3.3 Classical 6G Network Layer (NS-3)
