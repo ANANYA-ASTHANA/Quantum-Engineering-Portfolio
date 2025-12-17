@@ -211,8 +211,8 @@ Modeling ensures that the architecture reflects realistic 6G deployment constrai
 
 - **E91 QKD** generated **7000 EPR pairs**, yielding **$\approx 45–50$% sifted-key retention** after bases reconciliation (ideal).
 - QBER measured using 10% publicly revealed sifted key sample bits ranged **4–7%**; keys exceeding **5%** QBER were discarded in accordance with high-security requirements.
-- **TF-QKD** central-node interference behavior was reproduced at the protocol level under idealized simulation assumptions, demonstrating correct twin-field key-establishment logic in an untrusted-relay architecture.
-- **MDI-QKD** Bell-state measurement outcomes were correctly inferred in a simulated untrusted-relay setting, validating protocol-level correctness of measurement-device-independent key generation without reliance on detector trust assumptions.
+- **TF-QKD** phase-dependent central-node detection statistics were observed, with output probability distributions varying consistently with the relative phase difference between the input states, reflecting the expected interference behavior at the protocol level.
+- **MDI-QKD** Bell-state measurement outcome distributions enabled correct logical bit inference in an untrusted-relay configuration, demonstrating the expected measurement-device-independent behavior in the simulated results. 
 
 ---
 
