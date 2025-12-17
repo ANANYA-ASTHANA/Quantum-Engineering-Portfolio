@@ -142,7 +142,7 @@ Modeling ensures that the architecture reflects realistic 6G deployment constrai
 
 #### **TF-QKD (Qiskit)**
 
-- Hamiltonian-inspired beam-splitter abstraction for central-node interference  
+- Hamiltonian-inspired beamsplitter abstraction for central-node interference  
 - Single-excitation qubit subspace representation of interfering states  
 - Input-state phase difference injection with phase-dependent (output) detector click statistics  
 
