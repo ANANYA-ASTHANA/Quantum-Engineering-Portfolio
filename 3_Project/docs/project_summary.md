@@ -1,4 +1,4 @@
-# Quantum–Classical Secure Communication Architecture for 6G Networks
+# Quantum-Classical Secure Communication Architecture for 6G Networks
 ### **Project Summary**
 _(Based on Bachelor's Major Project, titled "Future-proofing 6G Networks: A Quantum Approach")_
 
@@ -6,7 +6,7 @@ _(Based on Bachelor's Major Project, titled "Future-proofing 6G Networks: A Quan
 
 ## **1. Abstract**
 
-The rise of quantum computing threatens the security foundation of classical cryptographic systems, while emerging 6G networks introduce unprecedented performance demands across hyper-connected military and government infrastructures. This project develops a hybrid quantum–classical secure communication architecture that integrates **Quantum Key Distribution (QKD)** with **AES-256** in a simulated **6G network**, implemented using **SimulaQron/Qiskit**, **NS-3**, and a custom **Flask-based web system**. The architecture includes multi-layer QKD support (E91, TF-QKD, MDI-QKD), LDPC-based Key Reconciliation (KR), Trevisan-based Privacy Amplification (PA), HKDF/Extractor-based Key Derivation Function (KDF) for session key generation, NS-3 simulation of a 6G-like classical network with SDN-driven adaptive network modulation, threshold-based anomaly detection, and real-time network visualization. Results show that the proposed system enables reliable quantum key generation, secure derivation of session keys for stable AES-256 encrypted communication in realistic channel conditions, and effective anomaly detection across a hierarchical military-grade network. The work demonstrates a feasible, modular, and extendable blueprint for quantum-secured 6G communication infrastructures.
+The rise of quantum computing threatens the security foundation of classical cryptographic systems, while emerging 6G networks introduce unprecedented performance demands across hyper-connected military and government infrastructures. This project develops a hybrid quantum-classical secure communication architecture that integrates **Quantum Key Distribution (QKD)** with **AES-256** in a simulated **6G network**, implemented using **SimulaQron/Qiskit**, **NS-3**, and a custom **Flask-based web system**. The architecture includes multi-layer QKD support (E91, TF-QKD, MDI-QKD), LDPC-based Key Reconciliation (KR), Trevisan-based Privacy Amplification (PA), HKDF/Extractor-based Key Derivation Function (KDF) for session key generation, NS-3 simulation of a 6G-like classical network with SDN-driven adaptive network modulation, threshold-based anomaly detection, and real-time network visualization. Results show that the proposed system enables reliable quantum key generation, secure derivation of session keys for stable AES-256-GCM encrypted communication in realistic channel conditions, and effective anomaly detection across a hierarchical military-grade network. The work demonstrates a feasible, modular, and extendable blueprint for quantum-secured 6G communication infrastructures.
 
 ---
 
@@ -52,7 +52,7 @@ Implemented using NS-3 with:
 - Real-time channel metrics (SNR, BER, Load, Packet Loss)  
 - Anomaly detection (threshold-based behavioral deviations)  
 
-Nodes exchange AES-256 encrypted messages using session keys derived from QKD.
+Nodes exchange AES-256-GCM encrypted messages using session keys derived from QKD.
 
 ---
 
@@ -60,10 +60,10 @@ Nodes exchange AES-256 encrypted messages using session keys derived from QKD.
 
 The bridge manages:
 
-- Raw key transfer (ZeroMQ REQ–REP)  
+- Raw key transfer (ZeroMQ REQ-REP)  
 - LDPC-based key reconciliation (pyLDPC) [6]
 - Privacy amplification (Trevisan’s extractor) for master-key compression [7]
-- AES-256 session-key derivation via Trevisan's extractor (double usage)/HKDF-SHA256 (efficient KDF alternative to Trevisan) [8]
+- AES-256 session-key derivation via Trevisan's extractor (double usage)/HKDF-SHA3-256 (efficient KDF alternative to Trevisan) [8]
 - Secure (session) key propagation to backend communication layers  
 
 Together, this creates an end-to-end secure pipeline from quantum measurement $\rightarrow$ key derivation $\rightarrow$ encrypted classical transmission.
@@ -78,7 +78,7 @@ A Flask-based web interface provides user-facing functionality:
 - **AES-256-encrypted chat rooms** using session keys from the Integration Layer,  
 - **Role-based access control** (users vs. admin),  
 - **Real-time NS-3 dashboard** showing SNR, BER, anomalies, and link state (admin only),  
-- **Session-key refresh** upon network state changes or on-demand.
+- **Session-key refresh** for incoming network traffic.
 
 This layer demonstrates how quantum-derived entropy can be integrated into operational communication systems.
 
@@ -136,29 +136,29 @@ Modeling ensures that the architecture reflects realistic 6G deployment constrai
 
 - Random basis selection (Z/X/Y)  
 - Entangled pair measurement  
-- Basis reconciliation  
-- 10% sample for QBER estimation  
+- Bases reconciliation (sifting)
+- 10% sifted-ky sampling for QBER estimation  
 - QBER ≤ 5% $\rightarrow$ key accepted (with sample bits removed), else entire key discarded  
 
 #### **TF-QKD (Qiskit)**
 
-- Simulated weak coherent pulses via gate-level approximation  
-- Hamiltonian-based beam-splitter model in Qiskit  
-- Interference simulation to mimic Charlie’s measurement  
+- Hamiltonian-inspired beam-splitter abstraction for central-node interference  
+- Single-excitation qubit subspace representation of interfering states  
+- Input-state phase difference injection with phase-dependent (output) detector click statistics  
 
 #### **MDI-QKD (Qiskit)**
 
-- Bell-State Measurement simulation  
-- Independent qubit preparation (Alice/Bob)  
-- BSM-based bit inference and sifting  
+- Independent qubit preparation (Alice/Bob)
+- Bell-State Measurement simulation    
+- BSM-based outcome distribution
 
 ---
 
 ### **5.2 Quantum-to-Classical Key Transfer**
 
-- ZeroMQ REQ–REP  
+- ZeroMQ REQ-REP  
 - Raw key $\rightarrow$ Classical post-processing  
-- Secure ACK (Acknowledgement) exchanges  
+- Secure ACK (Acknowledgment) exchanges  
 
 ---
 
@@ -197,9 +197,9 @@ Modeling ensures that the architecture reflects realistic 6G deployment constrai
 ### **5.5 Web Application**
 
 - MFA (Password + QKD-challenge) login  
-- AES-256 encrypted messaging  
-- Real-time network visualization for admins  
+- AES-256-GCM encrypted messaging
 - Session-key deletion after use (prevents key reuse)
+- Real-time network visualization for admins  
 
 ---
 
@@ -209,19 +209,19 @@ Modeling ensures that the architecture reflects realistic 6G deployment constrai
 
 ### **6.1 Quantum Layer**
 
-- **E91 QKD** generated **7000 EPR pairs**, yielding **$\approx 45–50$% sifted-key retention** after basis reconciliation.
+- **E91 QKD** generated **7000 EPR pairs**, yielding **$\approx 45–50$% sifted-key retention** after bases reconciliation (ideal).
 - QBER measured using 10% publicly revealed sifted key sample bits ranged **4–7%**; keys exceeding **5%** QBER were discarded in accordance with high-security requirements.
-- **TF-QKD** interference simulation (Hamiltonian beamsplitter) achieved **> 95% visibility**, confirming stable central-node interference behavior.
-- **MDI-QKD** Bell-State Measurement simulation achieved **> 97% ideal BSM fidelity**, supporting high-confidence central-node operation in untrusted-relay settings.
+- **TF-QKD** central-node interference behavior was reproduced at the protocol level under idealized simulation assumptions, demonstrating correct twin-field key-establishment logic in an untrusted-relay architecture.
+- **MDI-QKD** Bell-state measurement outcomes were correctly inferred in a simulated untrusted-relay setting, validating protocol-level correctness of measurement-device-independent key generation without reliance on detector trust assumptions.
 
 ---
 
 ### **6.2 Post-Processing**
 
-- **LDPC-based key reconciliation** successfully reconciled sifted keys with **$\leq 5$% QBER**, enabling both parties to obtain identical raw keys.
+- **LDPC-based key reconciliation** successfully reconciled sifted keys with **100% success rate**, enabling both parties to obtain identical raw keys.
 - **Trevisan-based privacy amplification** condensed the reconciled key into a **1792-bit master key**, giving a retention factor of **$\approx 0.87$** while maintaining high min-entropy.
 - - **Trevisan-based key derivation** produced **disjoint AES-256 session keys** from the compressed master key, ensuring **zero reuse of key material**.
-  - **HKDF-SHA256** expanded the same master key into **multiple cryptographically independent AES-256 session keys** for strong per-session confidentiality.
+  - **HKDF-SHA3-256** expanded the same master key into **multiple cryptographically independent AES-256 session keys** for strong per-session confidentiality.
 
 ---
 
@@ -233,7 +233,7 @@ Modeling ensures that the architecture reflects realistic 6G deployment constrai
   - **Load > 80%**
   - **Packet loss rate > 3%**
 - The hybrid QKD $\rightarrow$ AES-256 encryption pipeline sustained **real-time secure messaging** across the hierarchical military-grade network model (Cabinet $\leftrightarrow$ HQ $\leftrightarrow$ Regional Bases).
-- Threshold-based anomaly detection correctly identified unfavorable channel states requiring modulation fallback or retransmission.
+- Threshold-based anomaly detection correctly identified unfavorable channel states requiring modulation fallback.
 
 ---
 
@@ -278,7 +278,7 @@ The project confirms that QKD-generated keys can be effectively integrated into 
 - TF-QKD and MDI-QKD implementations are conceptual approximations lacking optical-channel fidelity.
 - NS-3 simulation does not modify modulation at hardware PHY level (printed/logical switching only).
 - Lack of decoy-state implementation in the actual QKD pipeline.
-- Some classical simulations simplify mmWave/THz propagation dynamics.
+- Some classical simulations simplify THz/mmWave propagation dynamics.
 
 These limitations stem from the scope of simulation-only work and can be extended in future studies. 
 
@@ -288,7 +288,7 @@ These limitations stem from the scope of simulation-only work and can be extende
 
 - Implement decoy-state TF-QKD and MDI-QKD  
 - Incorporate high-fidelity quantum simulators (QuNetSim, NetSquid)  
-- Develop PQC–QKD hybrid security  
+- Develop PQC-QKD hybrid security  
 - Add RL-based adaptive SDN modulation control  
 - Integrate hardware-in-the-loop quantum modules  
 
