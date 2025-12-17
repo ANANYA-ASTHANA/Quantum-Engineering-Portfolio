@@ -372,7 +372,6 @@ def handle_send_message(data):
     # Select a session key (e.g., first session key) for encryption
     #session_key = session_keys[0]
     
-    print("Applied!")
     iv, ciphertext, tag = encrypt_data(message, byte_keys[0])    #AES-256 encryption of sender's data
     print("Encrypted!")
     # Save encrypted data
@@ -467,13 +466,12 @@ def run_ns3():
     
 # Start Flask and NS-3 simulation
 if __name__ == '__main__':
-    #socketio.run(app, host='0.0.0.0', port=5000, debug=True, use_reloader=False)
     t = threading.Thread(target=lambda: socketio.run(app, host='0.0.0.0', port=5000, debug=True, use_reloader=False))
     t.daemon = False
     t.start()
     t.join()
-    print("[DEBUG] Flask started!")
+    print("Flask started!")
     ns3_thread = threading.Thread(target=run_ns3)
     ns3_thread.start()
     ns3_thread.join()
-    print("[DEBUG] ns3 started!")
+    print("NS-3 started!") 
