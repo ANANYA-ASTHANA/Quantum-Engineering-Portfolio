@@ -1,9 +1,18 @@
 # Future-Proofing 6G Networks: A Quantum Approach
-**Author:** *Ananya Asthana*
 
 This repository presents an end-to-end **quantum-secure 6G communication architecture**, integrating Quantum Key Distribution (QKD), classical key refinement, and AES-256-secured data transmission within an NS-3-simulated 6G network.
 
 The system is engineered for **mission-critical environments**, particularly **government and military communication networks**, where high-assurance confidentiality, integrity, and forward security are required.
+
+## 📄 Associated Research Preprint
+This project is accompanied by a research preprint that presents the full system architecture, security rationale, protocol selection, and evaluation results.
+
+**Title:** *Future-Proofing 6G Networks: A Quantum Approach*  
+**Author:** Ananya Asthana  
+**Platform:** TechRxiv (IEEE)  
+**DOI:** https://doi.org/10.36227/techrxiv.176761701.12926879/v1  
+
+📌 *This repository implements and extends the architecture described in the paper, including quantum key generation, classical post-processing, and secure network simulation components.*
 
 ---
 
