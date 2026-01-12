@@ -184,7 +184,3 @@ python proj_code/classical/classical_network.py
 ```
 
 Access the portal at: **http://localhost:5000/**
-
----
-  
-This repository accompanies the capstone project *“Future-Proofing 6G Networks: A Quantum Approach.”*
