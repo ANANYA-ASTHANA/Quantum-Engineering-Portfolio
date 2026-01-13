@@ -10,7 +10,6 @@ This project is accompanied by a research preprint that presents the full system
 **Title:** *Future-Proofing 6G Networks: A Quantum Approach*  
 **Author:** Ananya Asthana  
 **Platform:** TechRxiv (IEEE)
-**Date of Release:** January 05, 2026
 **DOI:** https://doi.org/10.36227/techrxiv.176761701.12926879/v1  
 
 📌 *This repository implements and extends the architecture described in the paper, including quantum key generation, classical post-processing, and secure network simulation components.*
