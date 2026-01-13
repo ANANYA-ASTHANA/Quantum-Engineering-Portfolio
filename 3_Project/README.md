@@ -7,11 +7,11 @@ The system is engineered for **mission-critical environments**, particularly **g
 ## 📄 Associated Research Preprint
 This project is accompanied by a research preprint that presents the full system architecture, security rationale, protocol selection, and evaluation results.
 
-**Title:** *Future-Proofing 6G Networks: A Quantum Approach* 
-**Author:** Ananya Asthana  
-**Platform:** TechRxiv (IEEE)
-**Date of Release:** January 05, 2026
-**DOI:** https://doi.org/10.36227/techrxiv.176761701.12926879/v1  
+**Title:** *Future-Proofing 6G Networks: A Quantum Approach*   
+**Author:** Ananya Asthana    
+**Platform:** TechRxiv (IEEE)  
+**Date of Release:** January 05, 2026  
+**DOI:** https://doi.org/10.36227/techrxiv.176761701.12926879/v1    
 
 📌 *This repository implements and extends the architecture described in the paper, including quantum key generation, classical post-processing, and secure network simulation components.*
 
